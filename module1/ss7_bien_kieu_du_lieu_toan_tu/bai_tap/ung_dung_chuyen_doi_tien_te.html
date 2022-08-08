@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung Dung Chuyen Doi Tien Te</title>
+</head>
+<body>
+<form action="">
+    Amount <br>
+    <input type="text" id="giatri">
+    Form Currency
+    <select name="tien" id="nhap1">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    To Currency
+    <select name="tien" id="nhap2">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <input type="button" value="convert" onclick="tinh()"/>
+</form>
+</body>
+<script>
+function tinh() {
+    let giaTriKoDoi= document.getElementById("giatri").value;
+    let nhap1 = document.getElementById("nhap1").value;
+    let nhap2 = document.getElementById("nhap2").value;
+    if (nhap1==nhap2){
+        alert(giaTriKoDoi);
+    }
+    if (nhap1=="VND" && nhap2=="USD");{
+        alert(giaTriKoDoi/23000);
+    }
+    if (nhap1=="USD" && nhap2=="VND");{
+        alert(giaTriKoDoi*23000);
+    }
+}
+
+</script>
+</html>

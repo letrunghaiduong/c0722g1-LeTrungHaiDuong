@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung Dung May Tinh</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<table>
+<tr style="border: 1px">
+    <th><input type="text" id="a"></th>
+    <th><input type="text" id="b"></th>
+</tr>
+</table>
+<br>
+<table border="1px">
+<tr>
+    <td><input type="button" value="Addition(+)" onclick="Cong()"></td>
+    <td><input type="button" value="Subtraction(-)" onclick="Tru()"></td>
+    <td><input type="button" value="Multiplication(X)"onclick="Nhan()"></td>
+    <td><input type="button" value="Division(/)" onclick="Chia()"></td>
+</tr>
+</table>
+</body>
+<script>
+function Cong() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    alert(a+b);
+}
+function Tru() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    alert(a-b);
+}
+function Nhan() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    alert(a*b);
+}
+function Chia() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    alert(a/b);
+}
+</script>
+</html>
