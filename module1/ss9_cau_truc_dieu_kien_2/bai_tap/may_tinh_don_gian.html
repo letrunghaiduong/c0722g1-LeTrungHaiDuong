@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính Đơn Giản</title>
+</head>
+<body>
+<form>
+<table border="1px">
+    <tr>
+        <td colspan="4"><input type="text" id="Display"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="mot()"></td>
+        <td><input type="button" value="2" onclick="hai()"></td>
+        <td><input type="button" value="3" onclick="ba()"></td>
+        <td><input type="button" value="+" onclick="cong()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="bon()"></td>
+        <td><input type="button" value="5" onclick="nam()"></td>
+        <td><input type="button" value="6" onclick="sau()"></td>
+        <td><input type="button" value="-" onclick="tru()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="bay()"></td>
+        <td><input type="button" value="8" onclick="tam()"></td>
+        <td><input type="button" value="9" onclick="chin()"></td>
+        <td><input type="button" value="*" onclick="nhan()"></td>
+    </tr>
+    <tr>
+        <td><input type="reset" value="C"></td>
+        <td><input type="button" value="0" onclick="khong()"></td>
+        <td><input type="button" value="=" onclick="bang()"></td>
+        <td><input type="button" value="/" onclick="chia()"></td>
+    </tr>
+</table>
+</form>
+</body>
+<script>
+function mot() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '1';
+}
+function hai() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '2';
+}
+function ba() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '3';
+}
+function bon() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '4';
+}
+function nam() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '5';
+}
+function sau() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '6';
+}
+function bay() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '7';
+}
+function tam() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '8';
+}
+function chin() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '9';
+}
+function khong() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '0';
+}
+function cong() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '+';
+}
+function tru() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '-';
+}
+function nhan() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '*';
+}
+function chia() {
+    let nhap = document.getElementById("Display").value;
+    document.getElementById("Display").value = nhap + '/';
+}
+function bang() {
+    let nhap = document.getElementById("Display").value;
+    let ketqua = eval(nhap);
+    document.getElementById("Display").value = ketqua;
+}
+</script>
+</html>

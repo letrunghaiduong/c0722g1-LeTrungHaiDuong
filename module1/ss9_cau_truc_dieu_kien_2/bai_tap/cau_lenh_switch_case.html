@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau Lenh Switch-Case</title>
+</head>
+<body>
+<h1>Kiểm tra số ngày trong tháng</h1>
+<table>
+    <tr>
+        <th><input type="number" value="Nhập Tháng" id="month"></th>
+        <th><input type="button" value="Tính Số Ngày" onclick="day()"></th>
+    </tr>
+</table>
+<p id="kq"></p>
+</body>
+<script>
+    function day() {
+        let month = parseInt(document.getElementById("month").value);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("kq").innerText="Tháng Này Có 31 Ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("kq").innerText="Tháng Này Có 30 Ngày";
+                break;
+            case 2:
+                document.getElementById("kq").innerText="Tháng Này Có 28 Hoặc 29 Ngày";
+                break;
+        }
+    }
+</script>
+</html>

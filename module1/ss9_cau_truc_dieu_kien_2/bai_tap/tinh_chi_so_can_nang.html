@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Chi So Can Nang</title>
+</head>
+<body>
+<h1>Tinh Chi So Can Nang</h1>
+<p>Nhap Can Nang:(kg) <input type="text" id="kg"></p>
+<p>Nhap Chieu Cao:(m) <input type="text" id="m"></p>
+<input type="button" value="Kiem Tra" onclick="kiemtra()">
+</body>
+<script>
+function kiemtra() {
+    let nhapkg = document.getElementById("kg").value;
+    let nhapm = document.getElementById("m").value;
+    let bmi = nhapkg/(nhapm*nhapm);
+    if (bmi < 18)
+        alert("Ban Dang Thieu Can, Chi So Can Nang La: " +bmi);
+    else if (bmi < 25.0)
+        alert("Ban Dang Binh Thuong, Chi So Can Nang La: " +bmi);
+    else if (bmi < 30.0)
+        alert("Ban Dang Thua Can, Chi So Can Nang La: " +bmi);
+    else
+        alert("Ban Dang Beo Phiv " +bmi);
+
+}
+</script>
+</html>
