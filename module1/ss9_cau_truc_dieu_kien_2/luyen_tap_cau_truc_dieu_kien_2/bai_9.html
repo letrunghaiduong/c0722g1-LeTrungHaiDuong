@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapA = parseInt(prompt("Nhập cạnh A"));
+    let nhapB = parseInt(prompt("Nhập cạnh B"));
+    let nhapC = parseInt(prompt("Nhập cạnh C"));
+    let laCanhTamGiac = false;
+    if (nhapA > 0 && nhapB > 0 && nhapC >>0){
+        if ((nhapA + nhapB) > nhapC){
+            if ((nhapB + nhapC) > nhapA){
+                if ((nhapA + nhapC) > nhapB){
+                    laCanhTamGiac = true;
+                }
+            }
+        }
+    } else {
+        laCanhTamGiac = false;
+    }
+    if (laCanhTamGiac){
+        alert("Là cạnh tam giác");
+    }else {
+        alert("Không phải cạnh tam giác");
+    }
+</script>
+</html>

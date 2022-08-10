@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc nhất</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapA = parseInt(prompt("Nhập A"));
+    let nhapB = parseInt(prompt("Nhập B"));
+    if (nhapA===0 && nhapB===0){
+        alert("Phương trình vô số nghiệm");
+    }else if(nhapA===0 && nhapB != 0){
+        alert("Phương trình vô nghiệm");
+    }else if(nhapA != 0){
+        alert("Phương trình có nghiệm duy nhất là: " +(-nhapB/nhapA));
+    }
+</script>
+</html>

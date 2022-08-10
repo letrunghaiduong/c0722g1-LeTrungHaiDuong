@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+
+</body>
+<script>
+    let soTienVay = parseFloat(prompt("Nhập số tiền vay"));
+    let soThangVay = parseFloat(prompt("Nhập số tháng vay"));
+    let laiSuat = parseFloat(prompt("Nhập lãi suất hàng tháng"));
+    alert("Số tiền lãi phải trả là: " +((soTienVay*(1+laiSuat)^soThangVay)-soTienVay));
+</script>
+</html>

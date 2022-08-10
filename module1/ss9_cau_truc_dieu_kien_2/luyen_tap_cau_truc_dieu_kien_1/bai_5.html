@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let kiemTra = parseInt(prompt("Nhập Điểm Kiểm Tra"));
+    let giuaKy = parseInt(prompt("Nhập Điểm Giữa Kỳ"));
+    let cuoiKy = parseInt(prompt("Nhập Điểm Cuối Kỳ"));
+    let trungBinh = ((kiemTra+giuaKy+cuoiKy)/3);
+    if (trungBinh >= 9){
+        alert("Loại Giỏi");
+    }else if (trungBinh >= 7){
+        alert("Loại Khá");
+    }else if (trungBinh >= 5){
+        alert("Loại Trung Bình");
+    }else{
+        alert("Loại Yếu");
+    }
+
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+
+</body>
+<script>
+    let thuNhap = parseInt(prompt("Nhập thu nhập mỗi tháng: "));
+    if (thuNhap > 20000000){
+        alert("Thuế phải đóng là: "+((20/100)*thuNhap));
+    }else if(thuNhap <= 20000000){
+        alert("Thuế phải đóng là: "+((15/100)*thuNhap));
+    }else if (thuNhap <= 10000000){
+        alert("Thuế phải đóng là: "+((10/100)*thuNhap));
+    }else if (thuNhap < 5000000){
+        alert("Thuế phải đóng là: "+((5/100)*thuNhap));
+    }
+</script>
+</html>

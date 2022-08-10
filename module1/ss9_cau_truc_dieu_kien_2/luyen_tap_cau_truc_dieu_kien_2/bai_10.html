@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+
+</body>
+<script>
+    let kw = parseInt(prompt("Nhập số kw đã sử dụng: "));
+    if (kw > 200){
+        alert("Số tiền điện phải trả là: " +((kw-200)*3000+(100*1000)+(50*2000)+(50*2500)));
+    }else if (kw <= 200){
+        alert("Số tiền điện phải trả là: " +((100*1000)+(50*2000)+(50*2500)));
+    }else if (kw <= 150){
+        alert("Số tiền điện phải trả là: " +((100*1000)+(50*2000)));
+    }else if (kw <= 100){
+        alert("Số tiền điện phải trả là: " +(100*1000));
+    }
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapA = parseInt(prompt("Nhập A"));
+    let nhapB = parseInt(prompt("Nhập B"));
+    let nhapC = parseInt(prompt("Nhập C"));
+    let delta = (nhapB*nhapB)-(4*nhapA*nhapC);
+    if (delta < 0){
+        alert("Phương trình vô nghiệm");
+    }else if (delta===0){
+        alert("Phương trình có nghiệm kép x1=x2="+(-nhapB/(2*nhapA)));
+    }else if (delta > 0){
+        alert("Phương trình có 2 nghiệm: "+"x1 ="+(-nhapB + Math.sqrt(delta))/(2*nhapA) +" và "+" "+"x2="+(-nhapB - Math.sqrt(delta))/(2*nhapA));
+    }
+</script>
+</html>
