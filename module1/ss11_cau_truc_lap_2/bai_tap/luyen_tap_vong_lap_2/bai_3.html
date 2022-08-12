@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = "";
+    for (let i = 1;i <= 5; i++){
+        for (let j = 1; j <=i; j++){
+           a += "*";
+        } a += "<br>";
+    }a += "<br>";
+    for (let i = 5;i >= 1; i--){
+        for (let j = 1; j <=i; j++){
+            a += "*";
+        } a += "<br>";
+    }a += "<br>";
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5-i; j++) {
+            a += "&nbsp&nbsp";
+        }
+        for (let x = 1; x <= i; x++) {
+            a += "*";
+        } a += "<br>";
+    }a += "<br>";
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= 5-i; j++) {
+            a += "&nbsp&nbsp";
+        }
+        for (let x = 1; x <= i; x++) {
+            a += "*";
+        } a += "<br>";
+    }a += "<br>";
+    document.write(a)
+</script>
+</html>

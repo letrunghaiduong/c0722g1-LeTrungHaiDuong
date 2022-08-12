@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c = a + b;
+    let chia5;
+    let fibonacci = a +"<br>"+ b + "<br>";
+    let i;
+    for (i = 0; i <= 20; i++){
+        c = a + b;
+        a = b;
+        b = c;
+        fibonacci += c + "<br>";
+        if (c%5==0){
+            chia5 = c;
+            break;
+        }
+    }
+    document.write("Số đầu tiên chia hết cho 5 là: " +chia5);
+</script>
+</html>

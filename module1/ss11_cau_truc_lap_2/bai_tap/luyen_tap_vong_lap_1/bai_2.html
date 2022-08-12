@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapNhietDo = prompt("Nhập nhiệt độ");
+    while (nhapNhietDo>20 || nhapNhietDo<100){
+        if(nhapNhietDo<20){
+            alert("Tăng nhiệt độ");
+            nhapNhietDo = prompt("Nhập nhiệt độ")
+        }
+        if (nhapNhietDo>100){
+            alert("Giảm nhiệt độ")
+            nhapNhietDo = prompt("Nhập nhiệt độ")
+        }
+    }
+</script>
+</html>

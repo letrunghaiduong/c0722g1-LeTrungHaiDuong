@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c = a + b;
+    let total = a+b+c;
+    let fibonacci = a +"<br>"+ b + "<br>";
+    let i;
+    for (i = 0; i <= 20; i++){
+        c = a + b;
+        a = b;
+        b = c;
+        fibonacci += c + "<br>";
+        total+=c;
+    }
+    document.write(total);
+</script>
+</html>

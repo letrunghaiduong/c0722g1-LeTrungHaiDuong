@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số Nguyên Tố</title>
+</head>
+<body>
+
+</body>
+<script>
+    let number = parseInt(prompt("Lưu Lượng số nguyên tố cần in ra"));
+    let count = 0;
+    let N = 2;
+    while (count<number){
+        let countCheck = 0;
+        for (let i = 1; i <= N ; i++){
+            if(N % i == 0) {
+                countCheck++;
+                continue;
+            }
+        }
+        if(countCheck == 2) {
+            document.write(N + '<br>');
+            count++;
+        }
+        N++;
+    }
+
+</script>
+</html>
