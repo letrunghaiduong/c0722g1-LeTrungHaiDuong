@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [1,2,3,4,9,6,7,10,8,5];
+    let max = arr[0];
+    let sum = 0;
+    let index = 0;
+    for (let i = 0; i < arr.length; i++){
+        index ++;
+        sum = sum + arr[i]
+        if (max < arr[i]){
+            max = arr[i];
+        }
+    }
+    document.write("Giá trị lớn nhất: "+ max + " Trung bình: " + sum/index)
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrNumber = ['a','b','c','7','9','3'];
+    let first = 0;
+    let last = arrNumber.length -1 ;
+    for (first = 0; first < last; first++){
+        let b = arrNumber[first];
+        arrNumber[first] = arrNumber[last];
+        arrNumber[last] = b;
+        last--;
+    }
+    alert(arrNumber.join(""));
+</script>
+</html>

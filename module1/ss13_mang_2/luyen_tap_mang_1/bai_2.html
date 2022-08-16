@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [1,2,3,4,9,6,7,10,8,5];
+    let max = arr[0];
+    let index = 0;
+    for (let i = 0; i < arr.length; i++){
+        if (max < arr[i]){
+            max = arr[i];
+            index = i;
+        }
+    }
+    document.write("Phần tử lớn nhất là: " + max + " ở vị trí thứ:" + index)
+
+
+</script>
+</html>

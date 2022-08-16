@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+
+</body>
+<script>
+    let number = [1,2,3,4,5,6,7,8,10,11];
+    let check = 0;
+    let sum = "";
+    for (let i = 0; i < number.length; i++){
+        if (number[i] >= 10){
+            check++;
+            sum = sum + number[i] + ','
+        }
+    }
+    document.write("Có " + check +" số lớn hơn 10 là: " + sum)
+</script>
+</html>

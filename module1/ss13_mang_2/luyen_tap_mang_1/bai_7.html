@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<p id="abc"></p>
+</body>
+<script>
+    let arrNumber = [1,2,3,4,5,6,7,8,9,10];
+    let V = parseInt(prompt("Nhập: "))
+    for (let i = 0; i < arrNumber.length; i++){
+        if (V === arrNumber[i] ){
+            arrNumber[i] = arrNumber[i +1];
+            j = i;
+        }
+    }
+    for (let x = j; x < arrNumber.length; x++){
+        arrNumber[x] = arrNumber[x+1];
+    }
+    arrNumber[arrNumber.length - 1] = 0;
+    document.write(arrNumber.toString());
+
+</script>
+</html>

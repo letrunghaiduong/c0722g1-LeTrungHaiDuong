@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let chieuDai = prompt("Nhập chiều sài mảng:");
+    for (let i = 0; i < chieuDai; i++){
+        let abc = prompt("Nhập phần tử:");
+        arr.push(abc);
+    }
+    for (let j = 0; j < arr.length; j++){
+        if (arr[j] == '-'){
+            arr[j] = '_';
+        }
+    }
+    alert(arr.join(""));
+</script>
+</html>

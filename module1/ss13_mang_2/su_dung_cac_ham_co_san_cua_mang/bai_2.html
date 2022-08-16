@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = prompt("Nhặp số: ");
+    var result = [arr[0]];
+    for(let x=1; x<arr.length; x++)
+    {
+        if((arr[x-1]%2 === 0)&&(arr[x]%2 === 0))
+        {
+            result.push('-', arr[x]);
+        }
+        else
+        {
+            result.push(arr[x]);
+        }
+    }
+    document.write(result.join(' '));
+
+</script>
+</html>

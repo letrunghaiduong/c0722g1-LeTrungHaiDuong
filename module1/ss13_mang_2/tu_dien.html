@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Dien</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhap = prompt("Nhập từ cần dịch: ")
+    let english = ["Red", "Green", "Yellow", "Blue", "Pink", "White"];
+    let vietnamese = ["Đỏ", "Xanh lá", "Vàng", "Xanh dương", "Hồng", "Trắng"];
+    let index_eng = 0;
+    let abc = "";
+    for (let i = 0; i < english.length; i++) {
+        if (nhap == english[i]) {
+            index_eng = i;
+            for (let j = 0; j < vietnamese.length; j++) {
+                if (index_eng == j) {
+                        abc = vietnamese[j];
+                }
+            }
+        }
+
+    }
+    alert(abc);
+</script>
+</html>
