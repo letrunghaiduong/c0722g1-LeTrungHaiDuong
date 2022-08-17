@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+
+</body>
+<script>
+    function arrNumber(array) {
+        let first;
+        let last = array.length - 1;
+        for (first = 0; first < last; first++){
+            let b = array[first];
+            array[first] = array[last];
+            array[last] = b;
+            last--;
+        }
+        alert(array);
+    }
+    let arr = [];
+    let chieuDai = prompt("Nhập chiều dài mảng:");
+    for (let i = 0; i < chieuDai; i++){
+        arr[i] = prompt("Nhập phần tử:");
+    }
+    arrNumber(arr);
+
+</script>
+</html>

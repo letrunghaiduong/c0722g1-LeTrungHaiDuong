@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+
+</body>
+<script>
+    function check(array,value) {
+        alert("Mảng đã nhập là: " + array)
+        let count = 0;
+        for (let i = 0; i < array.length; i++){
+            if (value == array[i]){
+                count++;
+            }
+        }
+        if (count > 0){
+            alert("Số lần xuất hiện của ký tự "+ value +" là "+count);
+        }else {
+            alert("-1");
+        }
+    }
+    let arr = [];
+    let chieuDai = prompt("Nhập chiều dài mảng:");
+    for (let i = 0; i < chieuDai; i++){
+        arr[i] = prompt("Nhập phần tử:");
+    }
+    let val = parseInt(prompt("Nhập ký tự"));
+    check(arr,val);
+</script>
+</html>

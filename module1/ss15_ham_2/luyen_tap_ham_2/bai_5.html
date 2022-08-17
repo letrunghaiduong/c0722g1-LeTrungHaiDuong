@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkNumber(array) {
+        let min = array[0];
+       for (let i = 0; i < array.length; i++){
+           if (min > array[i]){
+               min = array[i];
+           }
+       }
+        alert("Phần tử nhỏ nhất là: " + min);
+    }
+    let arr = [];
+    for (let i = 0; i < 3; i++){
+        arr[i] = +prompt("Nhập số: " + (i+1));
+    }
+    checkNumber(arr)
+
+</script>
+</html>

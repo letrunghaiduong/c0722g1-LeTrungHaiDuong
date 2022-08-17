@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let myArray = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let myArray2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function checkStar(star) {
+        let abc = "Không tìm thấy tên ngôi sao";
+        for (let i = 0; i < myArray.length; i++) {
+            if (nameStar == myArray[i]) {
+                abc = myArray2[i];
+                break;
+            }
+        }
+    return abc;
+    }
+    let nameStar = prompt("Nhập tên ngôi sao: ");
+    alert(checkStar(nameStar));
+</script>
+
+</html>

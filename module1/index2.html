@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 6</title>
+    <title>Title</title>
 </head>
 <body>
 
@@ -11,14 +11,8 @@
     let arr = [];
     let chieuDai = prompt("Nhập chiều dài mảng:");
     for (let i = 0; i < chieuDai; i++){
-        let abc = prompt("Nhập phần tử:");
-        arr.push(abc);
+        arr[i] = prompt("Nhập phần tử:");
     }
-    for (let j = 0; j < arr.length; j++){
-        if (arr[j] == '-'){
-            arr[j] = '_';
-        }
-    }
-    alert(arr.join(""));
+    document.write(arr)
 </script>
 </html>
