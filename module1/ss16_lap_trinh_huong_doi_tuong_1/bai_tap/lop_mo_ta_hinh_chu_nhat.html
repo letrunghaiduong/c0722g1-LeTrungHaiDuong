@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+<body>
+<canvas id="myCanvas" ></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor (width,height) {
+            this.width = width;
+            this.height = height;
+        }
+        getWidth() {
+            return this.width;
+        }
+        getHeight() {
+            return this.height;
+        }
+        dienTich() {
+            return this.width * this.height;
+        }
+        chuVi() {
+            return (this.width + this.height) * 2;
+        }
+    }
+    let myRectangle = new Rectangle(600,200);
+    let width = myRectangle.getWidth();
+    let height = myRectangle.getHeight();
+    document.write("<br>");
+    document.write("Diện tích: " + myRectangle.dienTich() + "<br>");
+    document.write("Chu vi: " + myRectangle.chuVi());
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle='#FF0000';
+    ctx.fillRect(0, 0, width, height);
+</script>
+</html>
