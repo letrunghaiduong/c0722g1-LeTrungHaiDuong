@@ -33,9 +33,11 @@
     let bongDen1 = new BongDen();
     let congTac = new CongTac();
     congTac.ketNoiVoiDen(bongDen1);
-    document.write(congTac.batDen()+ "<br>");
-    document.write(bongDen1.trangThai + "<br>");
-    document.write(congTac.tatDen()+ "<br>");
-    document.write(bongDen1.trangThai);
+    for (let i = 0; i < 5; i++){
+        document.write("Trạng thái công tắc: " + congTac.batDen()+ "<br>");
+        document.write("Trạng thái bóng đèn: " + bongDen1.trangThai + "<hr>");
+        document.write("Trạng thái công tắc: " + congTac.tatDen()+ "<br>");
+        document.write("Trạng thái bóng đèn: " + bongDen1.trangThai + "<hr>");
+    }
 </script>
 </html>
