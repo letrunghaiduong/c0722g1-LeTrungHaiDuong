@@ -9,15 +9,13 @@
 </body>
 <script>
     function chuVi(R) {
-        let chuVi = 2 * R * 3.14;
-        alert("Chu vi: "+chuVi);
+        return  chuVi = 2 * R * 3.14;
     }
     function dienTich(R) {
-        let dienTich = R * R * 3.14;
-        alert("Diện tích: "+dienTich);
+        return  dienTich = R * R * 3.14;
     }
     let nhapR = parseInt(prompt("Nhập bán kính"));
-    chuVi(nhapR);
-    dienTich(nhapR);
+    alert("Diện tích: " + dienTich(nhapR));
+    alert("Chu vi: " + chuVi(nhapR));
 </script>
 </html>

@@ -15,30 +15,30 @@
 <br>
 <table border="1px">
 <tr>
-    <td><input type="button" value="Addition(+)" onclick="Cong()"></td>
-    <td><input type="button" value="Subtraction(-)" onclick="Tru()"></td>
-    <td><input type="button" value="Multiplication(X)"onclick="Nhan()"></td>
-    <td><input type="button" value="Division(/)" onclick="Chia()"></td>
+    <td><input type="button" value="Addition(+)" onclick="cong()"></td>
+    <td><input type="button" value="Subtraction(-)" onclick="tru()"></td>
+    <td><input type="button" value="Multiplication(X)"onclick="nhan()"></td>
+    <td><input type="button" value="Division(/)" onclick="chia()"></td>
 </tr>
 </table>
 </body>
 <script>
-function Cong() {
+function cong() {
     let a = +document.getElementById("a").value;
     let b = +document.getElementById("b").value;
     alert(a+b);
 }
-function Tru() {
+function tru() {
     let a = document.getElementById("a").value;
     let b = document.getElementById("b").value;
     alert(a-b);
 }
-function Nhan() {
+function nhan() {
     let a = document.getElementById("a").value;
     let b = document.getElementById("b").value;
     alert(a*b);
 }
-function Chia() {
+function chia() {
     let a = document.getElementById("a").value;
     let b = document.getElementById("b").value;
     alert(a/b);

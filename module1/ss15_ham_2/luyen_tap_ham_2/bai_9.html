@@ -17,9 +17,9 @@
             }
         }
         if (count > 0){
-            alert("Số lần xuất hiện của ký tự "+ value +" là "+count);
+            return ("Số lần xuất hiện của ký tự "+ value +" là "+count);
         }else {
-            alert("-1");
+            return ("-1");
         }
     }
     let arr = [];
@@ -28,6 +28,6 @@
         arr[i] = prompt("Nhập phần tử:");
     }
     let val = parseInt(prompt("Nhập ký tự"));
-    check(arr,val);
+    alert(check(arr,val));
 </script>
 </html>

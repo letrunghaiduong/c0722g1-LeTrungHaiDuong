@@ -8,13 +8,11 @@
 
 </body>
 <script>
-    let number = prompt("Nhập số cần kiểm tra: ");
     let count = 0;
-    isPrime(number);
     function isPrime(number){
         let isPrime = false;
         if (number==0 && number==1){
-            alert("Không phải số nguyên tố")
+            return true;
         }else {
             for (let i = 0; i <= number ; i++) {
                 if (number %i ==0){
@@ -25,11 +23,17 @@
                 isPrime = true;
             }
             if (isPrime){
-                alert(number+" là số nguyên tố");
+                return false;
             }else {
-                alert(number+" không phải số nguyên tố");
+                return true;
             }
         }
+    }
+    let number = prompt("Nhập số cần kiểm tra: ");
+    if (isPrime(number) == false){
+        alert(number + " Là số nguyên tố");
+    }else {
+        alert(number + " Không phải số nguyên tố");
     }
 </script>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    class BongDen{
+        constructor(trangThai) {
+            this.trangThai = trangThai;
+        }
+
+    }
+    class CongTac{
+        constructor() {
+            this.trangThai = false;
+            this.bongDen = null;
+        }
+        batDen(){
+            this.bongDen.trangThai = true;
+            return this.trangThai = true;
+        }
+        tatDen(){
+            this.bongDen.trangThai = false;
+            return this.trangThai = false;
+        }
+        ketNoiVoiDen(bongDen){
+            this.bongDen = bongDen;
+        }
+    }
+    let bongDen1 = new BongDen();
+    let congTac = new CongTac();
+    congTac.ketNoiVoiDen(bongDen1);
+    document.write(congTac.batDen()+ "<br>");
+    document.write(bongDen1.trangThai + "<br>");
+    document.write(congTac.tatDen()+ "<br>");
+    document.write(bongDen1.trangThai);
+</script>
+</html>
