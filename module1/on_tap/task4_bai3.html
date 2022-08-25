@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+let strA = prompt("Nhập chuỗi A:");
+let strB = prompt("Nhập chuỗi B:");
+let strC = [];
+for (let i = 0; i < strA.length; i++){
+    for (let j = 0; j < strB.length; j++){
+        if (strA[i] == strB[j]){
+            strC.push(strA[i]);
+        }
+    }
+}
+
+alert("Có " + strC.length + " phần tử chung là: " + strC);
+</script>
+</html>

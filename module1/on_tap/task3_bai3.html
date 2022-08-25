@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let tuSo = [5,2,5];
+    let mauSo = [6,3,4];
+    let phanSo = [];
+    for (let i =0 ; i < tuSo.length; i++){
+        phanSo[i] = tuSo[i]/mauSo[i];
+    }
+    let max = phanSo[0];
+    let index;
+    for (let i = 0; i < phanSo.length; i++){
+        if (max < phanSo[i]){
+            max = phanSo[i];
+            index = i;
+        }
+    }
+    document.write('Số lớn nhất: '+ tuSo[index] +'/'+ mauSo[index] + ' Vị trí: ' + index);
+</script>
+</html>

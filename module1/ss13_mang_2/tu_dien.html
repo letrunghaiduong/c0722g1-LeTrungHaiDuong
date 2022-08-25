@@ -11,16 +11,10 @@
     let nhap = prompt("Nhập từ cần dịch: ")
     let english = ["Red", "Green", "Yellow", "Blue", "Pink", "White"];
     let vietnamese = ["Đỏ", "Xanh lá", "Vàng", "Xanh dương", "Hồng", "Trắng"];
-    let index_eng = 0;
     let abc = "";
     for (let i = 0; i < english.length; i++) {
         if (nhap == english[i]) {
-            index_eng = i;
-            for (let j = 0; j < vietnamese.length; j++) {
-                if (index_eng == j) {
-                        abc = vietnamese[j];
-                }
-            }
+            abc = vietnamese[i];
         }
     }
     alert(abc);

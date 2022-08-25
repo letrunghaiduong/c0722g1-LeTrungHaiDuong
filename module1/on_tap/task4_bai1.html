@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str = "tRuong taN hAI";
+    str = str.toLowerCase().split(" ");
+    for (let i = 0; i < str.length; i++){
+        str[i] = str[i][0].toUpperCase() + str[i].slice(1);
+
+    }
+    document.write(str.join(" "));
+</script>
+</html>

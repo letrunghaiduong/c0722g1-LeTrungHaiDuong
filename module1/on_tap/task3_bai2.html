@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let A=[7,2,5,3,5,3];
+    let B=[7,2,5,4,6,3,5,3];
+    for (let i = 0; i < B.length; i++){
+        for (let j = 0; j < A.length; j++){
+            if (B[i] === A[j]){
+                B.splice(i,1);
+            }
+        }
+    }
+    document.write(B.toString());
+</script>
+</html>

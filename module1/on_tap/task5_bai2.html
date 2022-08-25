@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Liệt kê số nguyên tố trong mảng 2 chiều
+    function isPrime(number){
+        let count = 0;
+        let isPrime = false;
+        if (number==0 && number==1){
+            return true;
+        }else {
+            for (let i = 0; i <= number ; i++) {
+                if (number %i ==0){
+                    count++;
+                }
+            }
+            if (count==2){
+                isPrime = true;
+            }
+            if (isPrime){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
+    let m = +prompt("Nhập m");
+    let n = +prompt("Nhập n");
+    let numbers = [];
+    let snt = [];
+    for (var i = 0; i < m; i++){
+        numbers[i] = [];
+        for (var j = 0; j < n; j++){
+            numbers[i][j] = Math.floor((Math.random() * 100) + 1);
+            if (isPrime(numbers[i][j]) == true){
+                snt.push(numbers[i][j]);
+            }
+        }
+    }
+    document.write("Mảng: " + numbers +"<br>");
+    document.write("Các số nguyên tố trong mảng là: " + snt);
+</script>
+</html>

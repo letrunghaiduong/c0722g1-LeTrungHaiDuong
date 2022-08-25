@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapLuong = parseInt(prompt("Nhập lương: "));
+    let thue;
+    let luong;
+    if (nhapLuong > 15000000){
+        thue =  nhapLuong * 20/100;
+        luong = nhapLuong - (nhapLuong*20/100);
+    }else if (nhapLuong < 7000000){
+        thue =  nhapLuong * 10/100;
+        luong = nhapLuong - (nhapLuong*10/100);
+    }else {
+        thue =  nhapLuong * 5/100;
+        luong = nhapLuong - (nhapLuong*5/100);
+    }
+    document.write("Thuế: " + thue + "<br>");
+    document.write("Lương: " + luong);
+</script>
+</html>
