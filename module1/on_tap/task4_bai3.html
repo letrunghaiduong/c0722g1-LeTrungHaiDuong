@@ -8,17 +8,22 @@
 
 </body>
 <script>
-let strA = prompt("Nhập chuỗi A:");
-let strB = prompt("Nhập chuỗi B:");
-let strC = [];
-for (let i = 0; i < strA.length; i++){
-    for (let j = 0; j < strB.length; j++){
-        if (strA[i] == strB[j]){
-            strC.push(strA[i]);
+    let str1 = prompt("Nhập chuỗi thứ nhất");
+    let str2 = prompt("Nhập chuỗi thứ hai");
+    let strA = str1.split("");
+    let strB = str2.split("");
+    let str = [];
+    for (let i = 0; i < strA.length; i++) {
+        for (let j = 0; j < strB.length; j++) {
+            if (strA[i] == strB[j]) {
+                str.push(strA[i]);
+                strA.splice(i, 1);
+                strB.splice(j, 1);
+                i--;
+                j--;
+            }
         }
     }
-}
-
-alert("Có " + strC.length + " phần tử chung là: " + strC);
+    alert("Có " + str.length + " ký tự chung là: " + str.toString());
 </script>
 </html>
