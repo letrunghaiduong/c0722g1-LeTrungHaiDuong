@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkMin(array) {
+        let min = array[0][0];
+        for (let i = 0; i < array.length; i++){
+            for (let j = 0; j <array.length; j++){
+                if (min > array[i][j]){
+                    min = array[i][j];
+                }
+            }
+        }
+        return min;
+    }
+    function checkMax(array) {
+        let max = array[0][0];
+        for (let i = 0; i < array.length; i++){
+            for (let j = 0; j <array.length; j++){
+                if (max < array[i][j]){
+                    max = array[i][j];
+                }
+            }
+        }
+        return max;
+    }
+    let m = +prompt("Nhập m");
+    let n = +prompt("Nhập n");
+    let numbers = [];
+    for (let i = 0; i < m; i++){
+        numbers[i] = [];
+        for (let j = 0; j < n; j++){
+            numbers[i][j] = Math.floor((Math.random() * 100) + 1);
+        }
+    }
+    document.write("Mảng: " + numbers + "<br>");
+    document.write("Giá trị bé nhất trong mảng: " + checkMin(numbers) + "<br>");
+    document.write("Giá trị lớn nhất trong mảng: " + checkMax(numbers));
+</script>
+</html>

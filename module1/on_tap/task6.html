@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Xổ số</h2>
+<body>
+<input type="text" id="number1">
+<input type="text" id="number2">
+<input type="text" id="number3">
+<input type="text" id="number4">
+<input type="text" id="number5">
+<input type="text" id="number6"><br>
+<input type="text" id="random1">
+<input type="text" id="random2">
+<input type="text" id="random3">
+<input type="text" id="random4">
+<input type="text" id="random5">
+<input type="text" id="random6"><br>
+<input type="button" onclick="buyTicket()" value="Mua vé">
+<input type="button" onclick="resultTicket()" value="Xem kết quả">
+<p id="display"></p>
+</body>
+<script>
+    let luaChon = +prompt('Bạn có 2 lựa chọn : \n' +
+        '1. Bạn muốn tự chọn số. \n' +
+        '2. Hệ thống tự random.')
+
+    switch (luaChon) {
+        case 1:
+            buyTicket();
+            break;
+        case 2:
+            randomTicket();
+            break;
+    }
+    function buyTicket() {
+        let number1 = document.getElementById("number1").value;
+        let number2 = document.getElementById("number2").value;
+        let number3 = document.getElementById("number3").value;
+        let number4 = document.getElementById("number4").value;
+        let number5 = document.getElementById("number5").value;
+        let number6 = document.getElementById("number6").value;
+        let array1 = [number1, number2, number3, number4, number5, number6];
+        return array1;
+    }
+    function randomTicket() {
+        let random1 = Math.floor(Math.random() * 2);
+        let random2 = Math.floor(Math.random() * 2);
+        let random3 = Math.floor(Math.random() * 2);
+        let random4 = Math.floor(Math.random() * 2);
+        let random5 = Math.floor(Math.random() * 2);
+        let random6 = Math.floor(Math.random() * 2);
+        document.getElementById("number1").value = random1;
+        document.getElementById("number2").value = random2;
+        document.getElementById("number3").value = random3;
+        document.getElementById("number4").value = random4;
+        document.getElementById("number5").value = random5;
+        document.getElementById("number6").value = random6;
+        let array2 = [random1, random2, random3, random4, random5, random6];
+        return array2;
+    }
+    function resultTicket() {
+        let check1 = Math.floor(Math.random() * 2);
+        let check2 = Math.floor(Math.random() * 2);
+        let check3 = Math.floor(Math.random() * 2);
+        let check4 = Math.floor(Math.random() * 2);
+        let check5 = Math.floor(Math.random() * 2);
+        let check6 = Math.floor(Math.random() * 2);
+
+        document.getElementById('random1').value = check1;
+        document.getElementById('random2').value = check2;
+        document.getElementById('random3').value = check3;
+        document.getElementById('random4').value = check4;
+        document.getElementById('random5').value = check5;
+        document.getElementById('random6').value = check6;
+        let array = [check1, check2, check3, check4, check5, check6];
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == buyTicket()[i] || array[i] == randomTicket()[i]) {
+                count++;
+            }
+        }
+        switch (count) {
+            case 6:
+                alert('Giải nhất.');
+                break;
+            case 5:
+                alert('Giải nhì.');
+                break;
+            case 4:
+                alert('Giải ba.');
+                break;
+            default:
+                alert('Chúc bạn may mắn lần sau.');
+                break;
+        }
+    }
+</script>
+</html>

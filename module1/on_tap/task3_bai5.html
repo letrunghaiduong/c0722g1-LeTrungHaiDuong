@@ -18,7 +18,7 @@
         str = +prompt("BẤM SỐ ĐỂ LỰA CHỌN THỨC UỐNG:\n 1.Cafe\n 2.Nước cam\n 3.Nước dừa\n 4.Nước chanh \n 5.Cacao\n 6.Trà sữa\n 7.Tính tiền");
         for (let i = 0; i < array1.length; i++) {
             if (str == array1[i]) {
-                num = +prompt("Thức uống bạn gọi là: " + array2[i] + " có đơn giá là: " + array3[i] + "\nNhập số lượng cần mua:");
+                num = +prompt(array2[i] + " có đơn giá là: " + array3[i] + "\nNhập số lượng cần mua:");
                 sum += num * array3[i];
             }
         }

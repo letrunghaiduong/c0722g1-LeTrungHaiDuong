@@ -8,12 +8,22 @@
 
 </body>
 <script>
-    let str = "tRuong taN hAI";
-    str = str.toLowerCase().split(" ");
-    for (let i = 0; i < str.length; i++){
-        str[i] = str[i][0].toUpperCase() + str[i].slice(1);
-
+    function kiemTra(text) {
+        let sentence = text.toLowerCase();
+        sentence=sentence.split(" ");
+        let arr=[];
+        for(let i = 0; i< sentence.length; i++){
+            if (sentence[i]!==""){
+                arr.push(sentence[i]);
+            }
+        }
+        for(let i = 0; i< arr.length; i++){
+            arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
+        }
+        return arr.join(" ");
     }
-    document.write(str.join(" "));
+    let kiTu=prompt("Nhập chuỗi");
+
+    document.write(kiemTra(kiTu));
 </script>
 </html>
