@@ -17,13 +17,15 @@
                 arr.push(sentence[i]);
             }
         }
-        for(let i = 0; i< arr.length; i++){
-            arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
+        if (arr.length == 1){
+            alert("Chuỗi này chỉ được tính chỉ có 1 từ");
+        }else {
+            for(let i = 0; i< arr.length; i++){
+                arr[i] = arr[i][0].toUpperCase();
+            }return arr.join("");
         }
-        return arr.join(" ");
     }
     let kiTu=prompt("Nhập chuỗi");
-
     document.write(kiemTra(kiTu));
 </script>
 </html>

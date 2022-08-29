@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="maMay" placeholder="Nhập mã máy">
+<input type="text" id="tenMay" placeholder="Nhập tên máy">
+<input type="text" id="tenHang" placeholder="Nhập hãng">
+<input type="text" id="giaBan" placeholder="Nhập giá">
+<input type="button" onclick="add()" value="Thêm máy tính mới">
+<p id="display"></p>
+</body>
+<script>
+    class MayTinh{
+        constructor(maMay,tenMay,tenHang,giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.tenHang = tenHang;
+            this.giaBan = giaBan;
+        }
+        setMaMay(maMay){
+            this.maMay = maMay
+        }
+        setTenMay(tenMay){
+            this.tenMay = tenMay;
+        }
+        setTenHang(tenHang){
+            this.tenHang = tenHang;
+        }
+        setGiaBan(giaBan){
+            this.giaBan = giaBan;
+        }
+        getMaMay(){
+            return this.maMay;
+        }
+        getTenMay(){
+            return this.tenMay;
+        }
+        getTenHang(){
+            return this.tenHang;
+        }
+        getGiaBan(){
+            return this.giaBan;
+        }
+    }
+    let mayTinh1 = new MayTinh(1,"Dell1","Dell",1000);
+    let mayTinh2 = new MayTinh(2,"Dell2","Dell",2000);
+    let mayTinh3 = new MayTinh(3,"Dell3","Dell",3000);
+    let danhSach = [mayTinh1,mayTinh2,mayTinh3];
+    display(danhSach);
+    function display(list) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Mã Máy</th>\n' +
+            '        <th>Tên máy</th>\n' +
+            '        <th>Tên hãng</th>\n' +
+            '        <th>Giá bán</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getMaMay() + '</td>\n' +
+                '        <td>' + list[i].getTenMay() + '</td>\n' +
+                '        <td>' + list[i].getTenHang() + '</td>\n' +
+                '        <td>' + list[i].getGiaBan() + '</td>\n' +
+                '    </tr>';
+        }
+
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+    }
+    function add() {
+        let ma = document.getElementById("maMay").value;
+        let ten = document.getElementById("tenMay").value;
+        let hang = document.getElementById("tenHang").value;
+        let gia = document.getElementById("giaBan").value;
+        let mayMoi = new MayTinh(ma,ten,hang,gia);
+        danhSach.push(mayMoi);
+        display(danhSach);
+        document.getElementById("maMay").value="";
+        document.getElementById("tenMay").value="";
+        document.getElementById("tenHang").value="";
+        document.getElementById("giaBan").value="";
+    }
+
+</script>
+</html>

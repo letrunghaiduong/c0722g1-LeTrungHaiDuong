@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let fib = [0, 1];
+    for(let i = 2; i <= 100; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    function checkFib(array) {
+        let check = [];
+        for (let i = 0; i < array.length; i++){
+            for (let j = 0; j < fib.length; j++){
+                if (array[i] == fib[j]){
+                    check.push(array[i]);
+                    break;
+                }
+            }
+        }
+        return check.sort((a, b) => (a - b));
+    }
+    let arr = [1,5,6,13,9,12,8,0,5,1];
+    document.write(checkFib(arr));
+</script>
+</html>
