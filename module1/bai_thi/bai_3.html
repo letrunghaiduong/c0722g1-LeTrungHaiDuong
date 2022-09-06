@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function kiemTra(mang,soNguyen){
+        let soChiaHetChoN = [];
+        for (let i = 0; i < mang.length; i++){
+            if (mang[i] %soNguyen == 0){
+                soChiaHetChoN.push(mang[i]);
+            }
+        }
+
+        for (let i = 0; i < soChiaHetChoN.length; i++){
+            for (let j = i + 1; j < soChiaHetChoN.length; j++ ){
+                if (soChiaHetChoN[i] == soChiaHetChoN[j]){
+                    soChiaHetChoN.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        return "Có " + soChiaHetChoN.length + " số chia hết cho N là: " + soChiaHetChoN;
+    }
+
+    let soNguyenN = +prompt("Nhập số nguyên: ");
+    let chieuDai = prompt("Nhập chiều dài mảng:");
+    let mangSoNguyen =[];
+    for (let i = 0; i < chieuDai; i++){
+        mangSoNguyen[i] = prompt("Nhập phần tử thứ: " + i);
+    }
+    document.write("Mảng bạn nhập: " + mangSoNguyen + "<br>");
+    document.write(kiemTra(mangSoNguyen,soNguyenN));
+
+
+</script>
+</html>

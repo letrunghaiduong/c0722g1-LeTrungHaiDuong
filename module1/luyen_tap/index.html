@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let chieuDai = +prompt("Nhap chieu dai mang: ");
+    let arr = [];
+    for (let i = 0; i < chieuDai; i++){
+        arr[i] = Math.floor(Math.random()*100);
+    }
+    let max = arr[0];
+    for (let i = 0; i < arr.length; i++){
+        if (max < arr[i]){
+            max = arr[i];
+        }
+    }
+    let fib = [0,1];
+    for (let i = 2; i < max; i++){
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    function checkArr(array) {
+        let arr1 = [];
+        for (let i = 0; i < array.length; i++){
+            for (let j = 0; j < fib.length; j++){
+                if (array[i] == fib[j]){
+                    arr1.push(array[i]);
+                }
+            }
+        }
+        for (let i = 0; i < arr1.length; i++){
+            for (let j = i + 1; j < arr1.length; j++){
+                if (arr1[i] == arr1[j]){
+                    arr1.splice(j);
+                }
+            }
+        }
+        return arr1;
+    }
+    document.write("Mang: " + arr + "<br>");
+    document.write(checkArr(arr))
+
+</script>
+</html>

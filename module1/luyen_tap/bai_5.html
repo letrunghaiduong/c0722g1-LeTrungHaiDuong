@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function giaiThua(number) {
+        let giaiThua = 1;
+        for (let i = 1; i <= number; i++){
+            giaiThua = i*giaiThua;
+        }
+        return giaiThua;
+    }
+    let nhapN = +prompt("Nhập N: ");
+    let number = 1;
+    let s = 0;
+    for (let i = 1; i <= (nhapN*2) - 1; i += 2){
+        s += number/giaiThua(i);
+    }
+    alert(s);
+</script>
+</html>

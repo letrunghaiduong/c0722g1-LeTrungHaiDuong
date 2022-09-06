@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapN = +prompt("Nhập chiều dài mảng(bé hơn 50): ");
+    while (nhapN > 50){
+        nhapN = +prompt("Nhập lại N < 50: ")
+    }
+    let count = 0;
+    let sum = 0;
+    let arr = [];
+    for (let i = 0; i < nhapN; i++){
+        arr[i] = Math.floor(Math.random() * nhapN);
+        if (i %2 !=0 && arr[i] %2== 0){
+            count++;
+            sum += arr[i];
+        }
+    }
+    document.write("Mảng: " + arr + "<br>");
+    document.write("Trung bình cộng của số chẵn tại vị trí lẻ: " + sum/count);
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkArray(array) {
+        let count = 1;
+        let arr = [];
+        for (let i = 0; i < array.length; i++){
+            for (let j = i+1; j < array.length; j++){
+                if (array[i] == array[j]){
+                    count ++;
+                    array.splice(j,1);
+                    j--;
+                }
+            }
+            arr.push(count);
+            count = 1;
+        }
+        for (let i = 0; i < array.length; i++){
+            document.write(array[i] +": " + arr[i] + " lần <br>");
+        }
+    }
+    let array = [1,1,1,2,3,3,1,2,4,2,2,4];
+    checkArray(array);
+</script>
+</html>

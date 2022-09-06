@@ -8,13 +8,13 @@
 
 </body>
 <script>
-    function kiemTra(text) {
-        let sentence = text.toLowerCase();
-        sentence = sentence.split(" ");
+    function kiemTra(string) {
+        string = string.toLowerCase();
+        string = string.split(" ");
         let arr=[];
-        for(let i = 0; i< sentence.length; i++){
-            if (sentence[i]!==""){
-                arr.push(sentence[i]);
+        for(let i = 0; i< string.length; i++){
+            if (string[i] !== ""){
+                arr.push(string[i]);
             }
         }
         if (arr.length == 1){

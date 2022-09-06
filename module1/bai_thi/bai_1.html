@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapMotSo = prompt("Nhập số nguyên: ");
+    while (nhapMotSo < 0 || isNaN(nhapMotSo)){
+        nhapMotSo = prompt("Nhập lại: ");
+    }
+    let cacUocCuaN = [];
+    for (let i = 0; i <= nhapMotSo; i++){
+        if (nhapMotSo %i==0){
+            cacUocCuaN.push(i);
+        }
+    }
+    document.write("Các ước của " + nhapMotSo + " là: " + cacUocCuaN);
+</script>
+</html>

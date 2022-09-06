@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nam = +prompt("Nhap nam: ");
+    let thang = +prompt("Nhap thang: ");
+    function kiemTraNamNhuan(number) {
+        if (number % 4 == 0) {
+            if (number % 100 == 0) {
+                if (number % 400 == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+    switch (thang) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert("Tháng " + thang + " năm " + nam + " có 31 ngày");
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert("Tháng " + thang + " năm " + nam + " có 30 ngày");
+            break;
+        case 2:
+            if (kiemTraNamNhuan(nam)==true){
+                alert("Tháng " + thang + " năm " + nam + " có 29 ngày");
+            }else {
+                alert("Tháng " + thang + " năm " + nam + " có 28 ngày");
+            }
+    }
+</script>
+</html>

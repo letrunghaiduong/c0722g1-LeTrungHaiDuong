@@ -72,19 +72,18 @@
         tableString += '</table>';
         document.getElementById("display").innerHTML = tableString;
     }
-    function add() {
-        let ma = document.getElementById("maMay").value;
-        let ten = document.getElementById("tenMay").value;
-        let hang = document.getElementById("tenHang").value;
-        let gia = document.getElementById("giaBan").value;
-        let mayMoi = new MayTinh(ma,ten,hang,gia);
-        danhSach.push(mayMoi);
-        display(danhSach);
-        document.getElementById("maMay").value="";
-        document.getElementById("tenMay").value="";
-        document.getElementById("tenHang").value="";
-        document.getElementById("giaBan").value="";
-    }
-
+    // function add() {
+    //     let ma = document.getElementById("maMay").value;
+    //     let ten = document.getElementById("tenMay").value;
+    //     let hang = document.getElementById("tenHang").value;
+    //     let gia = document.getElementById("giaBan").value;
+    //     let mayMoi = new MayTinh(ma,ten,hang,gia);
+    //     danhSach.push(mayMoi);
+    //     display(danhSach);
+    //     document.getElementById("maMay").value="";
+    //     document.getElementById("tenMay").value="";
+    //     document.getElementById("tenHang").value="";
+    //     document.getElementById("giaBan").value="";
+    // }
 </script>
 </html>

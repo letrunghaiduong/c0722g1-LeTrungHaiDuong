@@ -9,12 +9,12 @@
 </body>
 <script>
     function kiemTra(text) {
-        let sentence = text.toLowerCase();
-        sentence = sentence.split(" ");
+        text = text.toLowerCase();
+        text = text.split(" ");
         let arr=[];
-        for(let i = 0; i< sentence.length; i++){
-            if (sentence[i]!==""){
-                arr.push(sentence[i]);
+        for(let i = 0; i < text.length; i++){
+            if (text[i] !== ""){
+                arr.push(text[i]);
             }
         }
         for(let i = 0; i< arr.length; i++){
@@ -23,7 +23,6 @@
         return arr.join(" ");
     }
     let kiTu=prompt("Nhập chuỗi");
-
     document.write(kiemTra(kiTu));
 </script>
 </html>

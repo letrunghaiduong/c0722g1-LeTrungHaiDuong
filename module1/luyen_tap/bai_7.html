@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapN = prompt("Nhập N: ");
+    let tong = 0;
+    let tich = 1;
+    let arr = nhapN.split("")
+    for (let i = 0; i < arr.length; i++){
+        tong = tong + arr[i]*1;
+        tich = tich * arr[i];
+    }
+    document.write("Tổng: " + tong + "<br>");
+    document.write("Tích: " + tich);
+</script>
+</html>

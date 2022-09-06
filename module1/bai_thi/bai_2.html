@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function kiemTraMang(mang) {
+        let mangMinMax = [];
+        let min = mang[0];
+        let indexMin = 0;
+        let indexMax = 0;
+        for (let i = 0; i < mang.length; i++){
+            if (min > mang[i]){
+                min = mang[i];
+                indexMin = i;
+            }
+        }
+        mangMinMax.push(min);
+        let max = mang[0];
+        for (let i = 0; i < mang.length; i++){
+            if (max < mang[i]){
+                max = mang[i];
+                indexMax = i;
+            }
+        }
+        mangMinMax.push(max);
+        return mangMinMax + "<br>Phần tử bé nhất là " + min + " xuất hiện lần đầu tại vị trí " + indexMin + "<br> Phần tử lớn nhất là " + max + " cuất hiện lầ đầu tại vị trí " + indexMax;
+    }
+    function nhapMang(chieuDaiMang) {
+        let mangSoNguyen = [];
+        for (let i = 0; i < chieuDaiMang; i++){
+            mangSoNguyen[i] = prompt("Nhập phần tử thứ: " + i);
+        }
+        return mangSoNguyen;
+    }
+    let chieuDaiMang = prompt("Nhập chiều dài mảng: ");
+    let mangNhap = nhapMang(chieuDaiMang);
+    document.write("Mảng bạn nhập: " + mangNhap + "<br>");
+    document.write(kiemTraMang(mangNhap));
+</script>
+</html>

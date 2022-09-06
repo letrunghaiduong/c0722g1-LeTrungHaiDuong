@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkArr(array1,array2) {
+        for (let i = 0; i < array2.length; i++){
+            for (let j = 0; j < array1.length; j++){
+                if (array2[i] == array1[j]){
+                    return true;
+                    break;
+                }else {
+                    return false;
+                    break;
+                }
+            }
+        }
+    }
+    let arr1 = [1,2,3,4,5,6,7,8,9];
+    let arr2 = [4,5];
+    document.write(checkArr(arr1,arr2));
+</script>
+</html>

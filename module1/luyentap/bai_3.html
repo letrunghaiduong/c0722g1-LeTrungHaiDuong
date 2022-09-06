@@ -8,15 +8,26 @@
 
 </body>
 <script>
-    let fib = [0, 1];
-    for(let i = 2; i <= 100; i++) {
-        fib[i] = fib[i - 1] + fib[i - 2];
+    let arr = [1,5,6,13,9,12,8,0,5,1];
+    let max = arr[0];
+    for (let i = 0; i < arr.length; i++){
+        if (max < arr[i]){
+            max = arr[i];
+        }
+    }
+    function fib(number){
+        let fib = [0, 1];
+        for(let i = 2; i <= number; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+        return fib;
     }
     function checkFib(array) {
         let check = [];
+        let arr = fib(max);
         for (let i = 0; i < array.length; i++){
-            for (let j = 0; j < fib.length; j++){
-                if (array[i] == fib[j]){
+            for (let j = 0; j < arr.length; j++){
+                if (array[i] == arr[j]){
                     check.push(array[i]);
                     break;
                 }
@@ -24,7 +35,6 @@
         }
         return check.sort((a, b) => (a - b));
     }
-    let arr = [1,5,6,13,9,12,8,0,5,1];
     document.write(checkFib(arr));
 </script>
 </html>

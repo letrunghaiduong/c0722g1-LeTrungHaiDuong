@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sách bệnh nhân</h1>
+<p id="hienThi"></p>
+</body>
+<script>
+    class BenhNhan{
+        constructor(hoVaTen, tuoi, diaChi, soDienThoai) {
+            this.hoVaTen = hoVaTen;
+            this.tuoi = tuoi;
+            this.diaChi = diaChi;
+            this.soDienThoai = soDienThoai;
+        }
+        setHoVaTen(hoVaTen){
+            this.hoVaTen = hoVaTen;
+        }
+        setTuoi(tuoi){
+            this.tuoi = tuoi;
+        }
+        setDiaChi(diaChi){
+            this.diaChi = diaChi;
+        }
+        setSoDienThoai(soDienThoai){
+            this.soDienThoai = soDienThoai;
+        }
+        getHoVaTen(){
+            return this.hoVaTen;
+        }
+        getTuoi(){
+            return this.tuoi;
+        }
+        getDiaChi(){
+            return this.diaChi;
+        }
+        getSoDienThoai(){
+            return this.soDienThoai;
+        }
+    }
+    let benhNhan1 = new BenhNhan("Nguyễn Lê Hoàng Oanh", 20, "Quảng Nam", "0923434564");
+    let benhNhan2 = new BenhNhan("Nguyễn Trần Cảnh", 30, "Quảng Nam", "0923434559");
+    let benhNhan3 = new BenhNhan("Hoàng Thanh Hùng", 16, "Quảng Nam", "0923434164");
+    let benhNhan4 = new BenhNhan("Trần Lệ Quyên", 19, "Quảng Nam", "09234324564");
+    let benhNhan = [benhNhan1, benhNhan2, benhNhan3, benhNhan4];
+    hienThi(benhNhan);
+    function hienThi(danhSach) {
+        let bangDanhSach = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Họ và tên</th>\n' +
+            '        <th>Tuổi</th>\n' +
+            '        <th>Địa chỉ</th>\n' +
+            '        <th>Số điện thoại</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            bangDanhSach += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSach[i].getHoVaTen() + '</td>\n' +
+                '        <td>' + danhSach[i].getTuoi() + '</td>\n' +
+                '        <td>' + danhSach[i].getDiaChi() + '</td>\n' +
+                '        <td>' + danhSach[i].getSoDienThoai() + '</td>\n' +
+                '    </tr>';
+        }
+
+        bangDanhSach += '</table>';
+        document.getElementById("hienThi").innerHTML = bangDanhSach;
+    }
+
+</script>
+</html>

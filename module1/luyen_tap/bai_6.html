@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nhapN = +prompt("Nhập N: ");
+    let nLe = 1;
+    let nChan = 1;
+    for (let i = 1; i <= nhapN; i++){
+        if (i %2== 0){
+            nChan = nChan*i;
+        }else {
+            nLe = nLe*i;
+        }
+    }
+    document.write("N chẵn: " + nChan +"<br>");
+    document.write("N lẻ: " + nLe);
+
+</script>
+</html>
