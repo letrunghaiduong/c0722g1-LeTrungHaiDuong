@@ -2,7 +2,7 @@ package ss1_Introduction_to_Java.practice;
 
 import java.util.Scanner;
 
-public class Day_in_month {
+public class DayInMonth {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

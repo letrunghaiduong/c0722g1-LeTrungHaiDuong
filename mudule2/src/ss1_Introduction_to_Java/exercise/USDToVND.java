@@ -2,7 +2,7 @@ package ss1_Introduction_to_Java.exercise;
 
 import java.util.Scanner;
 
-public class USD_VND {
+public class USDToVND {
     public static void main(String[] args) {
         int rate = 23000;
         Scanner scanner = new Scanner(System.in);

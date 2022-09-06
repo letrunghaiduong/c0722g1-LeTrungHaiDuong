@@ -2,7 +2,7 @@ package ss1_Introduction_to_Java.exercise;
 
 import java.util.Scanner;
 
-public class Read_number {
+public class ReadNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập số: ");
