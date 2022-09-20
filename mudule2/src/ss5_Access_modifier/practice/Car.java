@@ -21,6 +21,9 @@ public class Car {
 
     }
 
+    public Car(String licensePlate, String manufacturer, int yearOfManufacture, String owner, int numberOfSeats, String carType) {
+    }
+
 
 
     // getters and setters
