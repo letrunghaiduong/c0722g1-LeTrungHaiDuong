@@ -47,6 +47,34 @@ public class TeacherService implements ITeacherService {
         }
     }
 
+    @Override
+    public void seachByName(String nameTeacher) {
+        boolean check = false;
+        for (int i = 0; i < teacherList.size(); i++){
+            if (teacherList.get(i).getName().contains(nameTeacher)){
+                System.out.println(teacherList.get(i));
+                check = true;
+            }
+        }
+        if (!check){
+            System.out.println("Không tìm thấy giảng viên ");
+        }
+    }
+
+    @Override
+    public void seachById(String idTeacher) {
+        boolean check = false;
+        for (int i = 0; i < teacherList.size(); i++){
+            if (teacherList.get(i).getId().equals(idTeacher)){
+                System.out.println(teacherList.get(i));
+                check = true;
+            }
+        }
+        if (!check){
+            System.out.println("Không tìm thấy giảng viên ");
+        }
+    }
+
     public Teacher infoTeacher() {
         System.out.print("Mời bạn nhập mã giảng viên: ");
         String id = scanner.nextLine();

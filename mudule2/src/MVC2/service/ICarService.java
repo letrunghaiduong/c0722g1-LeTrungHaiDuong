@@ -6,4 +6,6 @@ public interface ICarService {
     void carList();
 
     void searchCar(String licensePlate);
+
+    void removeCar(String licensePlateRemove);
 }

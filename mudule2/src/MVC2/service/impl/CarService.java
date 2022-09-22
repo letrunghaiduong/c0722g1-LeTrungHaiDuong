@@ -43,6 +43,27 @@ public class CarService implements ICarService {
         }
     }
 
+    @Override
+    public void removeCar(String licensePlateRemove) {
+        boolean check = false;
+        for (int i = 0; i < carList.size(); i++) {
+            if (carList.get(i).getLicensePlate().equals(licensePlateRemove)) {
+                System.out.println("Bạn có chắc muốn xóa học sinh này không? Nhập Y: yes, N: no");
+                String choice = scanner.nextLine();
+                if (choice.equals("Y")) {
+                    carList.remove(i);
+                    System.out.println("Xóa thành công");
+                }
+
+                check = true;
+                break;
+            }
+        }
+        if (!check) {
+            System.out.println("Không tìm thấy phương tiện! ");
+        }
+    }
+
     public Car infoCar() {
         System.out.println("Mời bạn nhập biển số : ");
         String licensePlate = scanner.nextLine();

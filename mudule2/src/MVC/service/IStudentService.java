@@ -7,4 +7,8 @@ public interface IStudentService {
     void removeStudent();
 
     void studentsList();
+
+    void seachByName(String nameStudent);
+
+    void seachById(String idStudent);
 }

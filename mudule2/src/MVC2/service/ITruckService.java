@@ -6,4 +6,6 @@ public interface ITruckService {
     void truckList();
 
     void searchTruck(String licensePlate);
+
+    void removeTruck(String licensePlateRemove);
 }

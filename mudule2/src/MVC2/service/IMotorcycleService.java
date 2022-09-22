@@ -6,4 +6,6 @@ public interface IMotorcycleService {
     void motoList();
 
     void searchMoto(String licensePlate);
+
+    void removeMoto(String licensePlateRemove);
 }

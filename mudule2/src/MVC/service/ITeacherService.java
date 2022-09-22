@@ -7,4 +7,7 @@ public interface ITeacherService {
 
     void teachersList();
 
+    void seachByName(String nameTeacher);
+
+    void seachById(String idTeacher);
 }

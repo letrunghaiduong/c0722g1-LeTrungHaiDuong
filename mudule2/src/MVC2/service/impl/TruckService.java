@@ -42,6 +42,26 @@ public class TruckService implements ITruckService {
         }
     }
 
+    @Override
+    public void removeTruck(String licensePlateRemove) {
+        boolean check = false;
+        for (int i = 0; i < truckList.size(); i++) {
+            if (truckList.get(i).getLicensePlate().contains(licensePlateRemove)) {
+                System.out.println("Bạn có chắc muốn xóa học sinh này không? Nhập Y: yes, N: no");
+                String choice = scanner.nextLine();
+                if (choice.equals("Y")) {
+                    truckList.remove(i);
+                    System.out.println("Xóa thành công");
+                }
+                check = true;
+                break;
+            }
+        }
+        if (!check) {
+            System.out.println("Không tìm thấy phương tiện! ");
+        }
+    }
+
     public Truck infoTruck() {
         System.out.println("Mời bạn nhập biển số : ");
         String licensePlate = scanner.nextLine();

@@ -70,6 +70,11 @@ public class MyController {
                     }
                     break;
                 case 3:
+                    System.out.println("Nhập biển số xe cần xóa: ");
+                    String licensePlateRemove = scanner.nextLine();
+                    iCarService.removeCar(licensePlateRemove);
+                    iTruckService.removeTruck(licensePlateRemove);
+                    iMotorcycleService.removeMoto(licensePlateRemove);
                     break;
                 case 4:
                     System.out.println("Nhập biển số xe cần tìm: ");
