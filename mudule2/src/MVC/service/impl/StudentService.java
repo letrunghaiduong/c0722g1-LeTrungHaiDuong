@@ -1,16 +1,26 @@
 package MVC.service.impl;
 
 import MVC.model.Student;
-import MVC.model.Teacher;
 import MVC.service.IStudentService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentService implements IStudentService {
-    private static Scanner scanner = new Scanner(System.in);
-    private static List<Student> studentList = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    List<Student> studentList = new ArrayList<>();
+    public void student(){
+        Student student0 = new Student("12","Duong","26/7","Nam","C07",9);
+        Student student1 = new Student("8","Duong","20/7","Nam","C07",8);
+        Student student2 = new Student("35","Duy","21/7","Nam","C07",10);
+        Student student3 = new Student("22","Hoang","1/7","Nam","C07",5);
+        Student student4 = new Student("47","Quan","12/7","Nam","C07",3);
+        studentList.add(student0);
+        studentList.add(student1);
+        studentList.add(student2);
+        studentList.add(student3);
+        studentList.add(student4);
+    }
+
 
     @Override
     public void addStudent() {
@@ -43,6 +53,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public void studentsList() {
+        student();
         for (Student student : studentList) {
             System.out.println(student);
         }
@@ -73,6 +84,34 @@ public class StudentService implements IStudentService {
         }
         if (!check){
             System.out.println("Không tìm thấy học sinh ");
+        }
+    }
+
+    @Override
+    public void sortStudents() {
+        boolean check = true;
+        for (int n = 1; n < studentList.size() && check; n++){
+            check = false;
+            for (int i = 0; i < studentList.size() - n; i++) {
+                Student temp = studentList.get(i);
+                int compareName = studentList.get(i).getName().compareTo(studentList.get(i + 1).getName());
+                if (compareName > 0){
+                    studentList.set(i,studentList.get(i+1));
+                    studentList.set(i+1,temp);
+                    check = true;
+                }
+                if (compareName == 0){
+                    if (studentList.get(i).getId().compareTo(studentList.get(i + 1).getId()) < 0){
+                        studentList.set(i,studentList.get(i+1));
+                        studentList.set(i+1,temp);
+                    }
+                    check = true;
+                }
+            }
+        }
+        System.out.println("Sau khi sắp xếp: ");
+        for (Student student : studentList) {
+            System.out.println(student);
         }
     }
 

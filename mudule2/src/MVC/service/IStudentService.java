@@ -11,4 +11,7 @@ public interface IStudentService {
     void seachByName(String nameStudent);
 
     void seachById(String idStudent);
+
+    void sortStudents();
+
 }

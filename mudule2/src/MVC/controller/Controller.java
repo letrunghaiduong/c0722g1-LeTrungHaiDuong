@@ -1,16 +1,19 @@
 package MVC.controller;
 
+import MVC.model.Student;
 import MVC.service.IStudentService;
 import MVC.service.ITeacherService;
 import MVC.service.impl.StudentService;
 import MVC.service.impl.TeacherService;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
     private static IStudentService iStudentService = new StudentService();
     private static ITeacherService iTeacherService = new TeacherService();
     private static Scanner scanner = new Scanner(System.in);
+
 
     public static void menu() {
         while (true) {
@@ -20,7 +23,8 @@ public class Controller {
             System.out.println("2. Xóa học sinh hoặc giảng viên");
             System.out.println("3. Xem danh sách học sinh hoặc giảng viên");
             System.out.println("4. Tìm kiếm gần đúng theo tên hoặc tìm kiếm đúng theo mã");
-            System.out.println("5. Thoát");
+            System.out.println("5. Sắp xếp theo tên: ");
+            System.out.println("6. Thoát");
 
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
@@ -88,6 +92,8 @@ public class Controller {
                                     String idStudent = scanner.nextLine();
                                     iStudentService.seachById(idStudent);
                                     break;
+                                default:
+                                    return;
                             }
                             break;
                         case 2:
@@ -106,11 +112,28 @@ public class Controller {
                                     String idTeacher = scanner.nextLine();
                                     iTeacherService.seachById(idTeacher);
                                     break;
+                                default:
+                                    return;
                             }
                             break;
                     }
                     break;
                 case 5:
+                    System.out.println("Chọn chức năng theo số: ");
+                    System.out.println("1. Sắp xếp học sinh.");
+                    System.out.println("2. Sắp xếp giảng viên.");
+                    int sort = Integer.parseInt(scanner.nextLine());
+                    switch (sort){
+                        case 1:
+                            iStudentService.sortStudents();
+                            break;
+                        case 2:
+                            iTeacherService.sortTeachers();
+                            break;
+                    }
+                    break;
+                case 6:
+                default:
                     return;
             }
         }
