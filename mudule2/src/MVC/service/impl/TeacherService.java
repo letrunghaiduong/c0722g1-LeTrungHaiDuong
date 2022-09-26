@@ -3,6 +3,8 @@ package MVC.service.impl;
 import MVC.model.Student;
 import MVC.model.Teacher;
 import MVC.service.ITeacherService;
+import MVC.service.ulti.Check;
+import MVC.service.ulti.WrongInputException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,10 +125,27 @@ public class TeacherService implements ITeacherService {
     }
 
     public Teacher infoTeacher() {
-        System.out.print("Mời bạn nhập mã giảng viên: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("Mời bạn nhập tên giảng viên: ");
-        String name = scanner.nextLine();
+        int id;
+        String name;
+        while (true){
+            try{
+                System.out.print("Mời bạn nhập mã giáo viên: ");
+                id = Integer.parseInt(scanner.nextLine());
+                break;
+            }catch (NumberFormatException e){
+                System.out.println("Mã không hợp lệ, nhập lại: ");
+            }
+        }
+        while (true){
+            try{
+                System.out.print("Mời bạn nhập tên giáo viên: ");
+                name = scanner.nextLine();
+                Check.checkName(name);
+                break;
+            }catch (WrongInputException e){
+                System.out.println(e.getMessage());
+            }
+        }
         System.out.print("Mời bạn nhập giới tính giảng viên: ");
         String gender = scanner.nextLine();
         System.out.print("Mời bạn ngày sinh giảng viên: ");
