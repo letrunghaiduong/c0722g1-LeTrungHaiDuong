@@ -1,12 +1,14 @@
 package MVC.model;
 
+import java.time.LocalDate;
+
 public abstract class Person {
-    private String id;
+    private int id;
     private String name;
     private String birthDay;
     private String gender;
 
-    public Person(String id, String name, String birthDay, String gender) {
+    public Person(int id, String name, String birthDay, String gender) {
         this.id = id;
         this.name = name;
         this.birthDay = birthDay;
@@ -16,7 +18,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -32,7 +34,7 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

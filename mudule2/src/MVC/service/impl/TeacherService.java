@@ -13,13 +13,13 @@ public class TeacherService implements ITeacherService {
     public static List<Teacher> teacherList = new ArrayList<>();
 
     public void teacher(){
-        Teacher teacher1 = new Teacher("44","Hoa","1/1","Nữ","Toán");
-        Teacher teacher2 = new Teacher("5","Hùng","1/1","Nam","Lý");
-        Teacher teacher3 = new Teacher("50","Long","1/1","Nam","Hóa");
-        Teacher teacher4 = new Teacher("15","Quốc","1/1","Nam","Văn");
-        Teacher teacher5 = new Teacher("20","Nhi","1/1","Nữ","Sử");
-        Teacher teacher6 = new Teacher("7","Dũng","1/1","Nam","Địa");
-        Teacher teacher7 = new Teacher("18","Dũng","1/1","Nam","Địa");
+        Teacher teacher1 = new Teacher(44,"Hoa","1/1","Nữ","Toán");
+        Teacher teacher2 = new Teacher(5,"Hùng","1/1","Nam","Lý");
+        Teacher teacher3 = new Teacher(50,"Long","1/1","Nam","Hóa");
+        Teacher teacher4 = new Teacher(15,"Quốc","1/1","Nam","Văn");
+        Teacher teacher5 = new Teacher(20,"Nhi","1/1","Nữ","Sử");
+        Teacher teacher6 = new Teacher(7,"Dũng","1/1","Nam","Địa");
+        Teacher teacher7 = new Teacher(18,"Dũng","1/1","Nam","Địa");
         teacherList.add(teacher1);
         teacherList.add(teacher2);
         teacherList.add(teacher3);
@@ -39,10 +39,10 @@ public class TeacherService implements ITeacherService {
     @Override
     public void removeTeacher() {
         System.out.println("Nhập mã giảng viên muốn xóa: ");
-        String id = scanner.nextLine();
+        int id = Integer.parseInt(scanner.nextLine());
         boolean flagDelete = false;
         for (int i = 0; i < teacherList.size(); i++) {
-            if (teacherList.get(i).getId().equals(id)) {
+            if (teacherList.get(i).getId()==(id)) {
                 System.out.println("Bạn có chắc muốn xóa GV này không? Nhập Y: yes, N: no");
                 String choice = scanner.nextLine();
                 if (choice.equals("Y")) {
@@ -81,10 +81,10 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void seachById(String idTeacher) {
+    public void seachById(int idTeacher) {
         boolean check = false;
         for (int i = 0; i < teacherList.size(); i++){
-            if (teacherList.get(i).getId().equals(idTeacher)){
+            if (teacherList.get(i).getId()==(idTeacher)){
                 System.out.println(teacherList.get(i));
                 check = true;
             }
@@ -108,7 +108,7 @@ public class TeacherService implements ITeacherService {
                     check = true;
                 }
                 if (compareName == 0){
-                    if (teacherList.get(i).getId().compareTo(teacherList.get(i + 1).getId()) < 0){
+                    if (teacherList.get(i).getId()-(teacherList.get(i + 1).getId()) > 0){
                         teacherList.set(i,teacherList.get(i+1));
                         teacherList.set(i+1,temp);
                     }
@@ -124,7 +124,7 @@ public class TeacherService implements ITeacherService {
 
     public Teacher infoTeacher() {
         System.out.print("Mời bạn nhập mã giảng viên: ");
-        String id = scanner.nextLine();
+        int id = Integer.parseInt(scanner.nextLine());
         System.out.print("Mời bạn nhập tên giảng viên: ");
         String name = scanner.nextLine();
         System.out.print("Mời bạn nhập giới tính giảng viên: ");

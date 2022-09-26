@@ -1,10 +1,12 @@
 package MVC.model;
 
+import java.time.LocalDate;
+
 public class Student extends Person{
     private String className;
     private double score;
 
-    public Student(String id, String name, String birthDay, String gender, String className, double score) {
+    public Student(int id, String name, String birthDay, String gender, String className, double score) {
         super(id, name, birthDay, gender);
         this.className = className;
         this.score = score;

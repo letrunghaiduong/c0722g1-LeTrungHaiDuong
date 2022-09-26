@@ -89,7 +89,7 @@ public class Controller {
                                     break;
                                 case 2:
                                     System.out.println("Nhập mã học sinh cần tìm");
-                                    String idStudent = scanner.nextLine();
+                                    int idStudent = Integer.parseInt(scanner.nextLine());
                                     iStudentService.seachById(idStudent);
                                     break;
                                 default:
@@ -109,7 +109,7 @@ public class Controller {
                                     break;
                                 case 2:
                                     System.out.println("Nhập tên giảng viên cần tìm");
-                                    String idTeacher = scanner.nextLine();
+                                    int idTeacher = Integer.parseInt(scanner.nextLine());
                                     iTeacherService.seachById(idTeacher);
                                     break;
                                 default:

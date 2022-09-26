@@ -1,9 +1,11 @@
 package MVC.model;
 
+import java.time.LocalDate;
+
 public class Teacher extends Person{
     private String specialize;
 
-    public Teacher(String id, String name, String birthDay, String gender, String specialize) {
+    public Teacher(int id, String name, String birthDay, String gender, String specialize) {
         super(id, name, birthDay, gender);
         this.specialize = specialize;
     }

@@ -9,7 +9,7 @@ public interface ITeacherService {
 
     void seachByName(String nameTeacher);
 
-    void seachById(String idTeacher);
+    void seachById(int idTeacher);
 
     void sortTeachers();
 }

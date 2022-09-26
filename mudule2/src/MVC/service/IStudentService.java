@@ -10,7 +10,7 @@ public interface IStudentService {
 
     void seachByName(String nameStudent);
 
-    void seachById(String idStudent);
+    void seachById(int idStudent);
 
     void sortStudents();
 
