@@ -17,7 +17,7 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void addTeacher() throws IOException {
-        getAllTeacherFromFile();
+        teacherList = getAllTeacherFromFile();
         Teacher teacher = this.infoTeacher();
         teacherList.add(teacher);
         System.out.println("Da them moi giang vien thanh cong");
@@ -55,7 +55,7 @@ public class TeacherService implements ITeacherService {
     }
 
     private List<Teacher> getAllTeacherFromFile()throws IOException {
-        File file = new File("src\\MVC\\data\\student.csv");
+        File file = new File("src\\MVC\\data\\teacher.csv");
         BufferedReader reader = new BufferedReader(new FileReader(file));
 
         Teacher teacher;
@@ -71,7 +71,7 @@ public class TeacherService implements ITeacherService {
     }
 
     private void writeFile(List<Teacher> teacherList)throws IOException{
-        File file = new File("src\\MVC\\data\\student.csv");
+        File file = new File("src\\MVC\\data\\teacher.csv");
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
         for (Teacher teacher: teacherList){
             writer.write(teacher.getInfo());
