@@ -1,11 +1,13 @@
 package MVC.service;
 
+import java.io.IOException;
+
 public interface ITeacherService {
-    void addTeacher();
+    void addTeacher() throws IOException;
 
     void removeTeacher();
 
-    void teachersList();
+    void teachersList() throws IOException;
 
     void seachByName(String nameTeacher);
 

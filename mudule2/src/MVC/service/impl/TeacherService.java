@@ -6,6 +6,7 @@ import MVC.service.ITeacherService;
 import MVC.service.ulti.Check;
 import MVC.service.ulti.WrongInputException;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,28 +15,13 @@ public class TeacherService implements ITeacherService {
     private static Scanner scanner = new Scanner(System.in);
     public static List<Teacher> teacherList = new ArrayList<>();
 
-    public void teacher(){
-        Teacher teacher1 = new Teacher(44,"Hoa","1/1","Nữ","Toán");
-        Teacher teacher2 = new Teacher(5,"Hùng","1/1","Nam","Lý");
-        Teacher teacher3 = new Teacher(50,"Long","1/1","Nam","Hóa");
-        Teacher teacher4 = new Teacher(15,"Quốc","1/1","Nam","Văn");
-        Teacher teacher5 = new Teacher(20,"Nhi","1/1","Nữ","Sử");
-        Teacher teacher6 = new Teacher(7,"Dũng","1/1","Nam","Địa");
-        Teacher teacher7 = new Teacher(18,"Dũng","1/1","Nam","Địa");
-        teacherList.add(teacher1);
-        teacherList.add(teacher2);
-        teacherList.add(teacher3);
-        teacherList.add(teacher4);
-        teacherList.add(teacher5);
-        teacherList.add(teacher6);
-        teacherList.add(teacher7);
-    }
-
     @Override
-    public void addTeacher() {
+    public void addTeacher() throws IOException {
+        getAllTeacherFromFile();
         Teacher teacher = this.infoTeacher();
         teacherList.add(teacher);
         System.out.println("Da them moi giang vien thanh cong");
+        writeFile(teacherList);
     }
 
     @Override
@@ -62,11 +48,38 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void teachersList() {
-        teacher();
+
         for (Teacher teacher : teacherList) {
             System.out.println(teacher);
         }
     }
+
+    private List<Teacher> getAllTeacherFromFile()throws IOException {
+        File file = new File("src\\MVC\\data\\student.csv");
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+
+        Teacher teacher;
+        String line;
+        String[] info;
+        while ((line = reader.readLine()) != null){
+            info = line.split(",");
+            teacher = new Teacher(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4]);
+            teacherList.add(teacher);
+        }
+        reader.close();
+        return teacherList;
+    }
+
+    private void writeFile(List<Teacher> teacherList)throws IOException{
+        File file = new File("src\\MVC\\data\\student.csv");
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        for (Teacher teacher: teacherList){
+            writer.write(teacher.getInfo());
+            writer.newLine();
+        }
+        writer.close();
+    }
+
 
     @Override
     public void seachByName(String nameTeacher) {

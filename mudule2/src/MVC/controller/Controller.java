@@ -6,6 +6,7 @@ import MVC.service.ITeacherService;
 import MVC.service.impl.StudentService;
 import MVC.service.impl.TeacherService;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class Controller {
     private static Scanner scanner = new Scanner(System.in);
 
 
-    public static void menu() {
+    public static void menu() throws IOException {
         while (true) {
             System.out.println("-----------CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN -----------");
             System.out.println("Chọn chức năng theo số (để tiếp tục): ");

@@ -39,4 +39,7 @@ public class Student extends Person{
                 ", score=" + score +
                 '}';
     }
+    public String getInfo(){
+        return String.format("%s,%s,%s,%s,%s,%s",this.getId(),this.getName(),this.getBirthDay(),this.getGender(),className,score);
+    }
 }

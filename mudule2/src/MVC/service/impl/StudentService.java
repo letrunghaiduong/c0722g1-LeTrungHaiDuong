@@ -4,32 +4,23 @@ import MVC.model.Student;
 import MVC.service.IStudentService;
 import MVC.service.ulti.Check;
 import MVC.service.ulti.WrongInputException;
+import ss16_file.exercise.read_file_.csv.Country;
 
+import java.io.*;
 import java.util.*;
 
 public class StudentService implements IStudentService {
     Scanner scanner = new Scanner(System.in);
     List<Student> studentList = new ArrayList<>();
 
-    public void student() {
-        Student student0 = new Student(12, "Duong", "01 / 02 / 2001", "Nam", "C07", 9);
-        Student student1 = new Student(8, "Duong", "20/07/2001", "Nam", "C07", 8);
-        Student student2 = new Student(35, "Duy", "21/07/2001", "Nam", "C07", 10);
-        Student student3 = new Student(22, "Hoang", "01/07/2001", "Nam", "C07", 5);
-        Student student4 = new Student(47, "Quan", "12/07/2001", "Nam", "C07", 3);
-        studentList.add(student0);
-        studentList.add(student1);
-        studentList.add(student2);
-        studentList.add(student3);
-        studentList.add(student4);
-    }
-
 
     @Override
-    public void addStudent() {
+    public void addStudent() throws IOException {
+        studentList = getAllStudentFromFile();
         Student student = this.infoStudent();
         studentList.add(student);
         System.out.println("Thêm mới thành công");
+        writeFile(studentList);
     }
 
     @Override
@@ -56,7 +47,6 @@ public class StudentService implements IStudentService {
 
     @Override
     public void studentsList() {
-        student();
         for (Student student : studentList) {
             System.out.println(student);
         }
@@ -116,6 +106,32 @@ public class StudentService implements IStudentService {
         for (Student student : studentList) {
             System.out.println(student);
         }
+    }
+
+    private List<Student> getAllStudentFromFile()throws IOException {
+        File file = new File("src\\MVC\\data\\student.csv");
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+
+        Student student1;
+        String line;
+        String[] info;
+        while ((line = reader.readLine()) != null){
+            info = line.split(",");
+            student1 = new Student(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4],Double.parseDouble(info[5]));
+            studentList.add(student1);
+        }
+        reader.close();
+        return studentList;
+    }
+
+    private void writeFile(List<Student> studentList)throws IOException{
+        File file = new File("src\\MVC\\data\\student.csv");
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        for (Student student: studentList){
+            writer.write(student.getInfo());
+            writer.newLine();
+        }
+        writer.close();
     }
 
     public Student infoStudent() {

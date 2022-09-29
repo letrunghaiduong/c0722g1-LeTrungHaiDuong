@@ -13,4 +13,5 @@ public class Check {
             throw new WrongInputException("Điểm không hợp lệ, nhập lại: ");
         }
     }
+    
 }
