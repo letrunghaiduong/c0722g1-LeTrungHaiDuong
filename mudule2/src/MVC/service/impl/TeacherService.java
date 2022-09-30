@@ -57,7 +57,7 @@ public class TeacherService implements ITeacherService {
     private List<Teacher> getAllTeacherFromFile()throws IOException {
         File file = new File("src\\MVC\\data\\teacher.csv");
         BufferedReader reader = new BufferedReader(new FileReader(file));
-
+        List<Teacher> teacherList = new ArrayList<>();
         Teacher teacher;
         String line;
         String[] info;

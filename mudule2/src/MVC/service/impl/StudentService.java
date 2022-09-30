@@ -24,7 +24,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void removeStudent() {
+    public void removeStudent() throws IOException {
+        studentList = getAllStudentFromFile();
         System.out.print("Mời bạn nhập mã học sinh cần xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
         boolean flagDelete = false;
@@ -46,14 +47,16 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void studentsList() {
+    public void studentsList() throws IOException {
+        studentList = getAllStudentFromFile();
         for (Student student : studentList) {
             System.out.println(student);
         }
     }
 
     @Override
-    public void seachByName(String nameStudent) {
+    public void seachByName(String nameStudent) throws IOException {
+        studentList = getAllStudentFromFile();
         boolean check = false;
         for (int i = 0; i < studentList.size(); i++) {
             if (studentList.get(i).getName().contains(nameStudent)) {
@@ -67,7 +70,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void seachById(int idStudent) {
+    public void seachById(int idStudent) throws IOException {
+        studentList = getAllStudentFromFile();
         boolean check = false;
         for (int i = 0; i < studentList.size(); i++) {
             if (studentList.get(i).getId() == (idStudent)) {
@@ -81,7 +85,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void sortStudents() {
+    public void sortStudents() throws IOException {
+        studentList = getAllStudentFromFile();
         boolean check = true;
         for (int n = 1; n < studentList.size() && check; n++) {
             check = false;
@@ -111,7 +116,7 @@ public class StudentService implements IStudentService {
     private List<Student> getAllStudentFromFile()throws IOException {
         File file = new File("src\\MVC\\data\\student.csv");
         BufferedReader reader = new BufferedReader(new FileReader(file));
-
+        List<Student> studentList = new ArrayList<>();
         Student student1;
         String line;
         String[] info;

@@ -6,14 +6,14 @@ public interface IStudentService {
 
     void addStudent() throws IOException;
 
-    void removeStudent();
+    void removeStudent() throws IOException;
 
     void studentsList() throws IOException;
 
-    void seachByName(String nameStudent);
+    void seachByName(String nameStudent) throws IOException;
 
-    void seachById(int idStudent);
+    void seachById(int idStudent) throws IOException;
 
-    void sortStudents();
+    void sortStudents() throws IOException;
 
 }
