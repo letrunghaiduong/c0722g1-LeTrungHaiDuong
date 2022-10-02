@@ -15,16 +15,15 @@ public class CoppyFile implements Serializable{
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject("Lê Trung Hải Dương");
             objectOutputStream.close();
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e){
             e.printStackTrace();
         }
 
         try {
-
-            FileOutputStream fileOutputStream = new FileOutputStream("src\\ss17_binary_file_serialization\\exercise\\coppy_file\\tagetFile.csv");
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             FileInputStream fileInputStream = new FileInputStream("src\\ss17_binary_file_serialization\\exercise\\coppy_file\\sourceFile.csv");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            FileOutputStream fileOutputStream = new FileOutputStream("src\\ss17_binary_file_serialization\\exercise\\coppy_file\\tagetFile.csv");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             String string = (String) objectInputStream.readObject();
             objectOutputStream.writeObject(string);
             long size = fileOutputStream.getChannel().size();
@@ -33,7 +32,7 @@ public class CoppyFile implements Serializable{
 
             objectInputStream.close();
             objectOutputStream.close();
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e){
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

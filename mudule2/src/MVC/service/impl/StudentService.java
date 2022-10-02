@@ -44,6 +44,7 @@ public class StudentService implements IStudentService {
         if (!flagDelete) {
             System.out.println("Không tìm thấy đối tượng cần xóa.");
         }
+        writeFile(studentList);
     }
 
     @Override
@@ -143,6 +144,9 @@ public class StudentService implements IStudentService {
         int id;
         String name;
         double score;
+        String gender;
+        String birthDay;
+        String nameClass;
         while (true){
             try{
                 System.out.print("Mời bạn nhập mã học sinh: ");
@@ -152,6 +156,7 @@ public class StudentService implements IStudentService {
                 System.out.println("Mã không hợp lệ, nhập lại: ");
             }
         }
+
         while (true){
             try{
                 System.out.print("Mời bạn nhập tên học sinh: ");
@@ -163,12 +168,39 @@ public class StudentService implements IStudentService {
             }
         }
 
-        System.out.print("Mời bạn nhập giới tính học sinh: ");
-        String gender = scanner.nextLine();
-        System.out.print("Mời bạn nhập tên lớp: ");
-        String nameClass = scanner.nextLine();
-        System.out.print("Mời bạn ngày sinh: ");
-        String birthDay = scanner.nextLine();
+        while (true){
+            try {
+                System.out.print("Mời bạn nhập giới tính học sinh: ");
+                gender = scanner.nextLine();
+                Check.checkGender(gender);
+                break;
+            }catch (WrongInputException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true){
+            try {
+                System.out.print("Mời bạn nhập tên lớp: ");
+                nameClass = scanner.nextLine();
+                Check.checkClass(nameClass);
+                break;
+            }catch (WrongInputException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true){
+            try {
+                System.out.print("Mời bạn ngày sinh: ");
+                birthDay = scanner.nextLine();
+                Check.checkBirthday(birthDay);
+                break;
+            }catch (WrongInputException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
         while (true){
             try{
                 System.out.print("Mời bạn nhập điểm của học sinh: ");

@@ -25,7 +25,8 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void removeTeacher() {
+    public void removeTeacher() throws IOException {
+        teacherList = getAllTeacherFromFile();
         System.out.println("Nhập mã giảng viên muốn xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
         boolean flagDelete = false;
@@ -44,11 +45,12 @@ public class TeacherService implements ITeacherService {
         if (!flagDelete) {
             System.out.println("Không tìm thấy đối tượng cần xóa.");
         }
+        writeFile(teacherList);
     }
 
     @Override
-    public void teachersList() {
-
+    public void teachersList() throws IOException {
+        teacherList = getAllTeacherFromFile();
         for (Teacher teacher : teacherList) {
             System.out.println(teacher);
         }
@@ -82,7 +84,8 @@ public class TeacherService implements ITeacherService {
 
 
     @Override
-    public void seachByName(String nameTeacher) {
+    public void seachByName(String nameTeacher) throws IOException {
+        teacherList = getAllTeacherFromFile();
         boolean check = false;
         for (int i = 0; i < teacherList.size(); i++){
             if (teacherList.get(i).getName().contains(nameTeacher)){
@@ -96,7 +99,8 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void seachById(int idTeacher) {
+    public void seachById(int idTeacher) throws IOException {
+        teacherList = getAllTeacherFromFile();
         boolean check = false;
         for (int i = 0; i < teacherList.size(); i++){
             if (teacherList.get(i).getId()==(idTeacher)){
@@ -110,7 +114,8 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void sortTeachers() {
+    public void sortTeachers() throws IOException {
+        teacherList = getAllTeacherFromFile();
         boolean check = true;
         for (int n = 1; n < teacherList.size() && check; n++){
             check = false;
@@ -140,6 +145,9 @@ public class TeacherService implements ITeacherService {
     public Teacher infoTeacher() {
         int id;
         String name;
+        String gender;
+        String birthDay;
+        String specialize;
         while (true){
             try{
                 System.out.print("Mời bạn nhập mã giáo viên: ");
@@ -149,6 +157,7 @@ public class TeacherService implements ITeacherService {
                 System.out.println("Mã không hợp lệ, nhập lại: ");
             }
         }
+
         while (true){
             try{
                 System.out.print("Mời bạn nhập tên giáo viên: ");
@@ -159,12 +168,40 @@ public class TeacherService implements ITeacherService {
                 System.out.println(e.getMessage());
             }
         }
-        System.out.print("Mời bạn nhập giới tính giảng viên: ");
-        String gender = scanner.nextLine();
-        System.out.print("Mời bạn ngày sinh giảng viên: ");
-        String birthDay = scanner.nextLine();
-        System.out.print("Mời bạn nhập chuyên môn: ");
-        String specialize = scanner.nextLine();
+
+        while (true){
+            try {
+                System.out.print("Mời bạn nhập giới tính giáo viên: ");
+                gender = scanner.nextLine();
+                Check.checkGender(gender);
+                break;
+            }catch (WrongInputException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true){
+            try {
+                System.out.print("Mời bạn ngày sinh giáo viên: ");
+                birthDay = scanner.nextLine();
+                Check.checkBirthday(birthDay);
+                break;
+            }catch (WrongInputException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true){
+            try{
+                System.out.print("Mời bạn nhập chuyên môn: ");
+                specialize = scanner.nextLine();
+                Check.checkName(specialize);
+                break;
+            }catch (WrongInputException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
         Teacher teacher = new Teacher(id, name, birthDay, gender, specialize);
         return teacher;
     }
