@@ -4,7 +4,7 @@ import MVC.service.ulti.WrongInputException;
 
 public class Check {
     public static void checkName(String name) throws WrongInPutException {
-        String nameRegex = "([A-Z][a-z]+[ ])+([A-Z][a-z]+)";
+        String nameRegex = "^[a-zA-Z\\s]*$";
         if (!name.matches(nameRegex)){
             throw new WrongInPutException("Tên không hợp lệ, nhập lại");
         }
@@ -22,13 +22,13 @@ public class Check {
         }
     }
     public static void checkIdentityCard(String identityCard) throws WrongInPutException{
-        String identityCardRegex = "[0-9]{12}";
+        String identityCardRegex = "[0-9]{5,}";
         if (!identityCard.matches(identityCardRegex)){
             throw new WrongInPutException("Số CMND không hợp lệ, nhập lại: ");
         }
     }
     public static void checkPhoneNumber(String phoneNumber) throws WrongInPutException{
-        String phoneNumberRegex = "0[0-9]{9}";
+        String phoneNumberRegex = "0[0-9]{5,}";
         if (!phoneNumber.matches(phoneNumberRegex)){
             throw new WrongInPutException("Số điện thoại không hợp lệ, nhập lại:");
         }
@@ -58,7 +58,7 @@ public class Check {
         }
     }
     public static void checkAddress(String address) throws WrongInPutException{
-        String addressRegex = "([0-9]?[A-Z][a-z]+_)+";
+        String addressRegex = "(^[\\sa-zA-Z0-9_-]{3,}$)+";
         if (!address.matches(addressRegex)){
             throw new WrongInPutException("Địa chỉ không đúng, nhập lại: ");
         }

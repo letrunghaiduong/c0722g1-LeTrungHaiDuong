@@ -49,7 +49,7 @@ public class CustomerService implements ICustomerService {
         for (int i = 0; i < customerList.size(); i++){
             if (customerList.get(i).getCode()==code){
                 check =true;
-                System.out.println("Nhân viên muốn edit là: ");
+                System.out.println("Khách hàng muốn edit là: ");
                 System.out.println(customerList.get(i));
                 customerList.remove(i);
                 Customer customer = this.infoCustomer();
@@ -111,7 +111,7 @@ public class CustomerService implements ICustomerService {
         }
         while (true) {
             try {
-                System.out.println("Mời bạn nhập tên nhân viên: ");
+                System.out.println("Mời bạn nhập tên khách hàng: ");
                 name = scanner.nextLine();
                 Check.checkName(name);
                 break;
@@ -121,7 +121,7 @@ public class CustomerService implements ICustomerService {
         }
         while (true) {
             try {
-                System.out.println("Mời bạn nhập ngày sinh nhân viên: ");
+                System.out.println("Mời bạn nhập ngày sinh khách hàng: ");
                 dateOfBirth = scanner.nextLine();
                 Check.checkDateOfBirth(dateOfBirth);
                 break;
@@ -131,7 +131,7 @@ public class CustomerService implements ICustomerService {
         }
         while (true) {
             try {
-                System.out.println("Mời bạn nhập giới tính nhân viên: ");
+                System.out.println("Mời bạn nhập giới tính khách hàng: ");
                 gender = scanner.nextLine();
                 Check.checkGender(gender);
                 break;
