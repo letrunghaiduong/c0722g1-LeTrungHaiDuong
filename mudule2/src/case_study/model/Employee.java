@@ -1,12 +1,14 @@
 package case_study.model;
 
+import java.time.LocalDate;
+
 public class Employee extends Persion{
 
     String level;
     String position;
     double wage;
 
-    public Employee(int code, String name, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email, String level, String position, double wage) {
+    public Employee(int code, String name, LocalDate dateOfBirth, String gender, String identityCard, String phoneNumber, String email, String level, String position, double wage) {
         super(code, name, dateOfBirth, gender, identityCard, phoneNumber, email);
         this.level = level;
         this.position = position;
@@ -62,6 +64,6 @@ public class Employee extends Persion{
                 '}';
     }
     public String getInfo(){
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,",code,name,dateOfBirth,gender,identityCard,phoneNumber,email,level,position,wage);
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",code,name,dateOfBirth,gender,identityCard,phoneNumber,email,level,position,wage);
     }
 }

@@ -1,4 +1,4 @@
-package case_study.service.ultil;
+package case_study.ultil;
 
 public class WrongInPutException extends Exception{
     public WrongInPutException(String message) {

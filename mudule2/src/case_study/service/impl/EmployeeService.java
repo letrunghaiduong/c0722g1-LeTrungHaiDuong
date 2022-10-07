@@ -2,10 +2,14 @@ package case_study.service.impl;
 
 import case_study.model.Employee;
 import case_study.service.IEmployeeService;
-import case_study.service.ultil.Check;
-import case_study.service.ultil.WrongInPutException;
+import case_study.ultil.Check;
+import case_study.ultil.WrongInPutException;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +17,7 @@ import java.util.Scanner;
 public class EmployeeService implements IEmployeeService {
     List<Employee> employeeList = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
+    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @Override
     public void displayEmployee() throws IOException {
@@ -72,7 +77,7 @@ public class EmployeeService implements IEmployeeService {
         String[] info;
         while ((line = reader.readLine()) != null) {
             info = line.split(",");
-            employee = new Employee(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], Double.parseDouble(info[9]));
+            employee = new Employee(Integer.parseInt(info[0]), info[1], LocalDate.parse(info[2]), info[3], info[4], info[5], info[6], info[7], info[8], Double.parseDouble(info[9]));
             employeeList.add(employee);
         }
         reader.close();
@@ -92,7 +97,7 @@ public class EmployeeService implements IEmployeeService {
     private Employee infoEmployee() throws WrongInPutException {
         int code;
         String name;
-        String dateOfBirth;
+        LocalDate dateOfBirth;
         String gender;
         String identityCard;
         String phoneNumber;
@@ -121,12 +126,14 @@ public class EmployeeService implements IEmployeeService {
         }
         while (true) {
             try {
-                System.out.println("Mời bạn nhập ngày sinh nhân viên: ");
-                dateOfBirth = scanner.nextLine();
-                Check.checkDateOfBirth(dateOfBirth);
+                System.out.println("Mời bạn nhập ngày sinh: ");
+                dateOfBirth = LocalDate.parse(scanner.nextLine(), formatter);
+                Check.checkAge(dateOfBirth);
                 break;
             } catch (WrongInPutException e) {
                 System.out.println(e.getMessage());
+            } catch (DateTimeParseException e){
+                System.out.println("Ngày sinh không đúng định dạng, nhập lại: ");
             }
         }
         while (true) {
@@ -171,7 +178,7 @@ public class EmployeeService implements IEmployeeService {
         }
         while (true) {
             try {
-                System.out.println("Mời bạn nhập trình độ nhân viên: ");
+                System.out.println("Mời bạn nhập trình độ nhân viên(Trung cấp|Cao đẳng|Đại học|Sau đại học): ");
                 level = scanner.nextLine();
                 Check.checkLevel(level);
                 break;
@@ -181,7 +188,7 @@ public class EmployeeService implements IEmployeeService {
         }
         while (true){
             try {
-                System.out.println("Mời bạn nhập chức vụ: ");
+                System.out.println("Mời bạn nhập chức vụ(Lễ tân|Phục vụ|Phuyên viên|Giám sát|Quản lý|Giám đốc): ");
                 position = scanner.nextLine();
                 Check.checkPosition(position);
                 break;

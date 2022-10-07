@@ -4,13 +4,13 @@ public class Villa extends Facility{
     String roomStandard;
     double poolArea;
     int numberOfFloors;
-
-    public Villa(String nameService, double usableArea, double rentCost, int numberOfPeople, String rentType, String roomStandard, double poolArea, int numberOfFloors) {
-        super(nameService, usableArea, rentCost, numberOfPeople, rentType);
+    public Villa(String nameService,String serviceCode, double usableArea, double rentCost, int numberOfPeople, String rentType, String roomStandard, double poolArea, int numberOfFloors) {
+        super(nameService,serviceCode, usableArea, rentCost, numberOfPeople, rentType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
     }
+
 
     public Villa(String roomStandard, double poolArea, int numberOfFloors) {
         this.roomStandard = roomStandard;
@@ -20,6 +20,7 @@ public class Villa extends Facility{
 
     public Villa() {
     }
+
 
     public String getRoomStandard() {
         return roomStandard;
@@ -48,14 +49,19 @@ public class Villa extends Facility{
     @Override
     public String toString() {
         return "Villa{" +
+                ", serviceCode='" + serviceCode + '\'' +
+                ", usableArea=" + usableArea +
+                ", rentCost=" + rentCost +
+                ", numberOfPeople=" + numberOfPeople +
+                ", rentType='" + rentType + '\'' +
                 "roomStandard='" + roomStandard + '\'' +
                 ", poolArea=" + poolArea +
                 ", numberOfFloors=" + numberOfFloors +
                 ", nameService='" + nameService + '\'' +
-                ", usableArea='" + usableArea + '\'' +
-                ", rentCost=" + rentCost +
-                ", numberOfPeople=" + numberOfPeople +
-                ", rentType='" + rentType + '\'' +
                 '}';
+    }
+
+    public String getInfo(){
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",nameService,serviceCode,usableArea,rentCost,numberOfPeople,rentType,roomStandard,poolArea,numberOfFloors);
     }
 }

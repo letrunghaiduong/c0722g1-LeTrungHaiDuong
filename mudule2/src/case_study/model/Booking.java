@@ -1,46 +1,48 @@
 package case_study.model;
 
+import java.time.LocalDate;
+
 public class Booking {
-    int BookingCode;
-    String startDay;
-    String endDate;
+    int bookingCode;
+    LocalDate startDay;
+    LocalDate endDate;
     int customerCode;
     String serviceName;
-    String typeOfService;
+    String serviceCode;
 
-    public Booking(int bookingCode, String startDay, String endDate, int customerCode, String serviceName, String typeOfService) {
-        BookingCode = bookingCode;
+    public Booking(int bookingCode, LocalDate startDay, LocalDate endDate, int customerCode, String serviceName,String serviceCode) {
+        bookingCode = bookingCode;
         this.startDay = startDay;
         this.endDate = endDate;
         this.customerCode = customerCode;
         this.serviceName = serviceName;
-        this.typeOfService = typeOfService;
+        this.serviceCode = serviceCode;
     }
 
     public Booking() {
     }
 
     public int getBookingCode() {
-        return BookingCode;
+        return bookingCode;
     }
 
     public void setBookingCode(int bookingCode) {
-        BookingCode = bookingCode;
+        bookingCode = bookingCode;
     }
 
-    public String getStartDay() {
+    public LocalDate getStartDay() {
         return startDay;
     }
 
-    public void setStartDay(String startDay) {
+    public void setStartDay(LocalDate startDay) {
         this.startDay = startDay;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
@@ -60,23 +62,23 @@ public class Booking {
         this.serviceName = serviceName;
     }
 
-    public String getTypeOfService() {
-        return typeOfService;
+    public String getServiceCode() {
+        return serviceCode;
     }
 
-    public void setTypeOfService(String typeOfService) {
-        this.typeOfService = typeOfService;
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     @Override
     public String toString() {
         return "Facility{" +
-                "BookingCode=" + BookingCode +
+                "BookingCode=" + bookingCode +
                 ", startDay='" + startDay + '\'' +
                 ", endDate='" + endDate + '\'' +
                 ", customerCode=" + customerCode +
                 ", serviceName='" + serviceName + '\'' +
-                ", typeOfService='" + typeOfService + '\'' +
+                ", serviceName='" + serviceCode + '\'' +
                 '}';
     }
 }

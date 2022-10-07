@@ -1,7 +1,5 @@
-Villa,300,100000000,5,Theo ngày,Vip,50,2
-Villa,400,150000000,10,Theo ngày,Normal,50,3
-Villa,500,200000000,15,Theo ngày,Normal,50,3
-Villa,300,100000000,5,Theo ngày,Vip,50,2
-Villa,500,100000000,25,Theo ngày,Vip,50,3
-Villa,400,100000000,10,Theo ngày,Normal,50,3
-Villa,300,100000000,5,Theo ngày,Vip,50,2
+Villa,VL-1234,300.0,1000000.0,10,Ngày,Vip,50.0,3
+Villa,VL-1234,400.0,1000000.0,12,Ngày,Vip,50.0,3
+Villa,VL-1234,200.0,8000000.0,8,Ngày,Vip,50.0,3
+Villa,VL-1234,123.0,123.0,12,Năm,Vip,123.0,12
+Villa,VL-1234,1234.0,123.0,12,Năm,Vip,123.0,-1

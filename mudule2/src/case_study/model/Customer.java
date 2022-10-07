@@ -1,11 +1,13 @@
 package case_study.model;
 
+import java.time.LocalDate;
+
 public class Customer extends Persion{
 
     String customerType;
     String address;
 
-    public Customer(int code, String name, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email, String customerType, String address) {
+    public Customer(int code, String name, LocalDate dateOfBirth, String gender, String identityCard, String phoneNumber, String email, String customerType, String address) {
         super(code, name, dateOfBirth, gender, identityCard, phoneNumber, email);
         this.customerType = customerType;
         this.address = address;

@@ -1,15 +1,17 @@
 package case_study.model;
 
+import java.time.LocalDate;
+
 public abstract class Persion {
     int code;
     String name;
-    String dateOfBirth;
+    LocalDate dateOfBirth;
     String gender;
     String identityCard;
     String phoneNumber;
     String email;
 
-    public Persion(int code, String name, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email) {
+    public Persion(int code, String name, LocalDate dateOfBirth, String gender, String identityCard, String phoneNumber, String email) {
         this.code = code;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -38,11 +40,11 @@ public abstract class Persion {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

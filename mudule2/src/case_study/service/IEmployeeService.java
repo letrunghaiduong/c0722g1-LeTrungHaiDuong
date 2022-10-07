@@ -1,6 +1,6 @@
 package case_study.service;
 
-import case_study.service.ultil.WrongInPutException;
+import case_study.ultil.WrongInPutException;
 
 import java.io.IOException;
 

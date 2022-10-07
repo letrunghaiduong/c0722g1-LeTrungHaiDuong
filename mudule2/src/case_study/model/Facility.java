@@ -2,17 +2,19 @@ package case_study.model;
 
 public abstract class Facility {
     String nameService;
+    String serviceCode;
     double usableArea;
     double rentCost;
     int numberOfPeople;
     String rentType;
 
-    public Facility(String nameService, double usableArea, double rentCost, int numberOfPeople, String rentType) {
+    public Facility(String nameService,String serviceCode, double usableArea, double rentCost, int numberOfPeople, String rentType) {
         this.nameService = nameService;
         this.usableArea = usableArea;
         this.rentCost = rentCost;
         this.numberOfPeople = numberOfPeople;
         this.rentType = rentType;
+        this.serviceCode = serviceCode;
     }
 
     public Facility() {
@@ -24,6 +26,14 @@ public abstract class Facility {
 
     public void setNameService(String nameService) {
         this.nameService = nameService;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public double getUsableArea() {
