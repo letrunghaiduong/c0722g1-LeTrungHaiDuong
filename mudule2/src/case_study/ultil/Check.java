@@ -133,27 +133,39 @@ public class Check {
         }
     }
     public static void checkCodeCustomerBooking(int code) throws WrongInPutException, IOException {
-        boolean check;
+        boolean check = false;
         for (int i = 0; i< CustomerService.readCustomerFile().size(); i++){
             if (code == CustomerService.readCustomerFile().get(i).getCode()){
                 check = true;
                 break;
             }
         }
-        if (check = false){
+        if (!check){
             throw new WrongInPutException("Không tìm thấy khách hàng có mã này, nhập lại");
         }
     }
     public static void checkServiceCodeBooking(String serviceCode) throws WrongInPutException, IOException {
-        boolean check;
+        boolean check = false;
         for (int i = 0; i< FacilityService.readVilaFile().size(); i++){
-            if (serviceCode.equals(FacilityService.readVilaFile().get(i).getServiceCode()) || serviceCode.equals(FacilityService.readHouseFile().get(i).getServiceCode()) || serviceCode.equals(FacilityService.readRoomFile().get(i).getServiceCode())){
+            if (serviceCode.equals(FacilityService.readVilaFile().get(i).getServiceCode()) | serviceCode.equals(FacilityService.readHouseFile().get(i).getServiceCode()) | serviceCode.equals(FacilityService.readRoomFile().get(i).getServiceCode())){
                 check = true;
                 break;
             }
         }
-        if (check = false){
+        if (!check){
             throw new WrongInPutException("Không tìm thấy khách hàng có mã này, nhập lại");
+        }
+    }
+    public static void checkCodeCustomer(int code) throws WrongInPutException, IOException {
+        boolean check = true;
+        for (int i = 0; i< CustomerService.readCustomerFile().size(); i++){
+            if (code == CustomerService.readCustomerFile().get(i).getCode()){
+                check = false;
+                break;
+            }
+        }
+        if (!check){
+            throw new WrongInPutException("Mã khách hàng đã tồn tại, nhập lại");
         }
     }
 }

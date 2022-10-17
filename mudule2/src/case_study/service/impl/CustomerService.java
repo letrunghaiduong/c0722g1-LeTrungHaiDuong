@@ -108,9 +108,12 @@ public class CustomerService implements ICustomerService {
             try {
                 System.out.println("Mời bạn nhập mã khách hàng: ");
                 code = Integer.parseInt(scanner.nextLine());
+                Check.checkCodeCustomer(code);
                 break;
-            }catch (NumberFormatException e){
+            }catch (NumberFormatException | IOException e){
                 System.out.println("Mã không hợp lệ, nhập lại");
+            }catch (WrongInPutException e){
+                System.out.println(e.getMessage());
             }
         }
         while (true) {
