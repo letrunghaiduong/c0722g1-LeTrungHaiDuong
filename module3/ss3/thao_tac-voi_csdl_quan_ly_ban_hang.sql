@@ -19,9 +19,13 @@ insert into order_detail values  (1,1,3),
 								 (2,3,3);
                                  
 -- Hiển thị các thông tin  gồm oID, oDate, oPrice của tất cả các hóa đơn trong bảng Order 
-select order_id, order_date, order_price from order_product;                                 
+select  order_id, 
+		order_date, 
+        order_price 
+from order_product;                                 
 -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
-select c.customer_name , p.product_name
+select  c.customer_name, 
+		p.product_name
 from customer c 
 join order_product o 
 on c.customer_id = o.customer_id 
@@ -31,10 +35,13 @@ join product p
 on od.product_id =  p.product_id;
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
 select *from customer c 
-left join order_product o on c.customer_id = o.customer_id
+left join order_product o 
+on c.customer_id = o.customer_id
 where o.customer_id is null;
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn
-select o.order_id, o.order_date, sum(od.orQTY * p.product_price) as toltal
+select  o.order_id,
+		o.order_date, 
+        sum(od.orQTY * p.product_price) as toltal
 from order_product o 
 join order_detail od
 on o.order_id = od.order_id
