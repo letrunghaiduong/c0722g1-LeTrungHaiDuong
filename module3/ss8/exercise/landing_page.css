@@ -2,14 +2,9 @@ a {
     display: inline;
     text-align: center;
     text-decoration: none;
-    box-shadow: 0 3px white;
     padding: 4px;
     color: black;
-    transition: box-shadow .4s, color .3s;
-    margin-left: 1%;
-
 }
-
 a:hover {
     color: #555555;
     box-shadow: 0 3px black;
