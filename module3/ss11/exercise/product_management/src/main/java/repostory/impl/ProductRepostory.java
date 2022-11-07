@@ -9,6 +9,7 @@ import java.util.List;
 public class ProductRepostory implements IProductRepostory {
     private static List<Product> productList = new ArrayList<>();
     static {
+        productList.add(new Product(0,"Product1",1000000,"describe1","producer1"));
         productList.add(new Product(1,"Product1",1000000,"describe1","producer1"));
         productList.add(new Product(2,"Product2",1500000,"describe2","producer2"));
         productList.add(new Product(3,"Product3",1200000,"describe3","producer3"));
@@ -44,9 +45,20 @@ public class ProductRepostory implements IProductRepostory {
     }
 
     @Override
-    public Product findById(int id) {
+    public List<Product> searchByName(String name) {
+        List<Product> listSearch = new ArrayList<>();
         for (int i = 0; i < productList.size(); i++) {
-            if (productList.get(i).getId() == id) {
+            if (productList.get(i).getName().equals(name)) {
+                listSearch.add(productList.get(i));
+            }
+        }
+        return listSearch;
+    }
+
+    @Override
+    public Product findByName(String name) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).getName().equals(name)) {
                 return productList.get(i);
             }
         }

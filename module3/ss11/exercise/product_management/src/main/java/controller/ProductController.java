@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "StudentController",urlPatterns = {"/product"})
-public class StudentController extends HttpServlet {
+@WebServlet(name = "ProductController",urlPatterns = {"/product"})
+public class ProductController extends HttpServlet {
     private IProductService productService = new ProductService();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -30,8 +30,22 @@ public class StudentController extends HttpServlet {
             case "remove":
                 remove(request,response);
                 break;
+            case "search":
+                search(request,response);
+                break;
             default:
                 listProduct(request, response);
+        }
+    }
+
+    private void search(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        List<Product> listSearch = productService.searchByName(name);
+        request.setAttribute("listSearch", listSearch);
+        try {
+            request.getRequestDispatcher("view/search.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -51,7 +65,7 @@ public class StudentController extends HttpServlet {
         float price = Float.parseFloat(request.getParameter("describe"));
         String describe = request.getParameter("describe");
         String producer = request.getParameter("producer");
-        Product product = productService.findById(id);
+        Product product = productService.findByName(name);
         product.setName(name);
         product.setPrice(price);
         product.setDescribe(describe);
@@ -60,7 +74,7 @@ public class StudentController extends HttpServlet {
         request.setAttribute("product",product);
         request.setAttribute("mess","sửa thành công");
         try {
-            request.getRequestDispatcher("view/product/edit.jsp").forward(request,response);
+            request.getRequestDispatcher("view/edit.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -106,24 +120,25 @@ public class StudentController extends HttpServlet {
         }
     }
 
+
     private void showRemoveProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Product product = productService.findById(id);
+        String name = request.getParameter("name");
+        Product product = productService.findByName(name);
         request.setAttribute("product", product);
         try {
-            request.getRequestDispatcher("view/product/remove.jsp").forward(request, response);
+            request.getRequestDispatcher("view/remove.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Product product = productService.findById(id);
+        String name = request.getParameter("name");
+        Product product = productService.findByName(name);
 
         if (product == null) {
             try {
-                request.getRequestDispatcher("view/product/error-404.jsp").forward(request, response);
+                request.getRequestDispatcher("view/edit.jsp").forward(request, response);
             } catch (ServletException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -132,7 +147,7 @@ public class StudentController extends HttpServlet {
         } else {
             request.setAttribute("product", product);
             try {
-                request.getRequestDispatcher("view/product/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("view/edit.jsp").forward(request, response);
             } catch (ServletException e) {
                 e.printStackTrace();
             } catch (IOException e) {

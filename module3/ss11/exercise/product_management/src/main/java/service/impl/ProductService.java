@@ -30,7 +30,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Product findById(int id) {
-        return productRepostory.findById(id);
+    public Product findByName(String name) {
+        return productRepostory.findByName(name);
+    }
+
+    @Override
+    public List<Product> searchByName(String name) {
+        return productRepostory.searchByName(name);
     }
 }

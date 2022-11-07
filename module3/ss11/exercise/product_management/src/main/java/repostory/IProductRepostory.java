@@ -9,5 +9,6 @@ public interface IProductRepostory {
     void add(Product product);
     void update(int id ,Product product);
     void remove(int id);
-    Product findById(int id);
+    List<Product> searchByName(String name);
+    Product findByName(String name);
 }

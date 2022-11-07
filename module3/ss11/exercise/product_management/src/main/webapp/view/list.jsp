@@ -14,6 +14,12 @@
 <body>
 <h1>Trang danh sánh sản phẩm</h1>
 <a href="/product?action=add">Thêm mới</a>
+<form action="/product?action=search" method="post">
+    <input type="text" placeholder="Search" name="name" >
+    <button class="btn btn-primary">
+        Search
+    </button>
+</form>
 <table class="table table-dark">
     <tr>
         <th>ID</th>
