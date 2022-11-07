@@ -38,7 +38,7 @@
             <td>${product.getDescribe()}</td>
             <td>${product.getProducer()}</td>
             <td><a href="/product?action=edit&id=${product.getId()}">Edit</a></td>
-            <td><a href="/product?action=remove&id=${product.getId()}">Delete</a></td>
+            <td><a href="/product?id=${product.getId()}&action=remove">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
