@@ -35,5 +35,4 @@ public class UserService implements IUserService {
     public boolean deleteUser(int id) {
         return userRepostory.deleteUser(id);
     }
-
 }
