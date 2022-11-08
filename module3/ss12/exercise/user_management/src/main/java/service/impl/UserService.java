@@ -27,8 +27,13 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<User> findByCountry(String ctr) {
-        return userRepostory.findByCountry(ctr);
+    public List<User> search(String ctr) {
+        return userRepostory.search(ctr);
+    }
+
+    @Override
+    public boolean deleteUser(int id) {
+        return userRepostory.deleteUser(id);
     }
 
 }

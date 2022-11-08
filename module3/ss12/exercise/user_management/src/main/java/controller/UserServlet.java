@@ -29,24 +29,32 @@ public class UserServlet extends HttpServlet {
             case "edit":
                 update(request,response);
                 break;
-//            case "remove":
-//                remove(request,response);
-//                break;
             case "search":
                 search(request,response);
                 break;
+
             default:
                 userList(request,response);
         }
     }
 
+    private void delete(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        boolean check = userService.deleteUser( id);
+        String mess = "Xoas không thành công";
+        if (check){
+            mess = "Xoas thành công";
+        }
+        request.setAttribute("mess",mess);
+        userList(request,response);
+    }
+
     private void search(HttpServletRequest request, HttpServletResponse response) {
         String country = request.getParameter("country");
-        List<User> listUser = userService.findByCountry(country);
-        request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/search.jsp");
+        List<User> userList = userService.search( country);
+        request.setAttribute("userList",userList);
         try {
-            dispatcher.forward(request, response);
+            request.getRequestDispatcher("view/list.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -124,20 +132,11 @@ public class UserServlet extends HttpServlet {
             case "edit":
                 formEdit(request,response);
                 break;
-            case "search":
-                formSearch(request,response);
+            case "delete":
+                delete(request,response);
+                break;
             default:
                 userList(request,response);
-        }
-    }
-
-    private void formSearch(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.getRequestDispatcher("view/search.jsp").forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 

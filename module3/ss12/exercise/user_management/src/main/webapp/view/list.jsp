@@ -18,7 +18,7 @@
     <h2>
         <a href="/users?action=add">Add New User</a>
     </h2>
-    <form action="/product?action=search" method="post">
+    <form action="/users?action=search" method="post">
         <input type="text" placeholder="Search" name="country" >
         <button class="btn btn-primary">
             Search
