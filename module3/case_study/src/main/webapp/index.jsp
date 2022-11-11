@@ -44,9 +44,9 @@
       <div class="col-md-8 container justify-content-center">
         <ul>
           <li><a class="navbar-brand" href="#">Home</a></li>
-          <li><a class="navbar-brand" href="view/employee_view/employee.jsp">Employee</a></li>
-          <li><a class="navbar-brand" href="view/customer_view/customer.jsp">Customer</a></li>
-          <li><a class="navbar-brand" href="view/facility_view/facility.jsp">Service</a></li>
+          <li><a class="navbar-brand" href="view/employee_view/employee_list.jsp">Employee</a></li>
+          <li><a class="navbar-brand" href="/customer">Customer</a></li>
+          <li><a class="navbar-brand" href="view/facility_view/facility_list.jsp">Service</a></li>
           <li><a class="navbar-brand" href="view/contract_view/contract.jsp">Contract</a></li>
         </ul>
       </div>

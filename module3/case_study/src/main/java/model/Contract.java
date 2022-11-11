@@ -1,13 +1,13 @@
 package model;
 
 public class Contract {
-    int id;
-    String startDate;
-    String endDate;
-    double deposit;
-    int employeeId;
-    int customerId;
-    int facilityId;
+    private int id;
+    private String startDate;
+    private String endDate;
+    private double deposit;
+    private int employeeId;
+    private int customerId;
+    private int facilityId;
 
     public Contract(int id, String startDate, String endDate, double deposit, int employeeId, int customerId, int facilityId) {
         this.id = id;

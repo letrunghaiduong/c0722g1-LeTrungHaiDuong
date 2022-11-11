@@ -1,5 +1,5 @@
 drop database if exists casestudy;
-create database casestudy;
+create database  if not exists casestudy;
 use casestudy;
 create table vi_tri(
 ma_vi_tri int primary key,

@@ -1,18 +1,29 @@
 package model;
 
 public class Customer {
-    int id;
-    int customerTypeId;
-    String name;
-    String dateOfBirth;
-    String gender;
-    String idCard;
-    String phoneNumber;
-    String email;
-    String address;
+    private int id;
+    private int customerTypeId;
+    private String name;
+    private String dateOfBirth;
+    private String gender;
+    private String idCard;
+    private String phoneNumber;
+    private String email;
+    private String address;
 
     public Customer(int id, int customerTypeId, String name, String dateOfBirth, String gender, String idCard, String phoneNumber, String email, String address) {
         this.id = id;
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Customer(int customerTypeId, String name, String dateOfBirth, String gender, String idCard, String phoneNumber, String email, String address) {
         this.customerTypeId = customerTypeId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;

@@ -1,18 +1,18 @@
 package model;
 
 public class Facility {
-    int id;
-    String name;
-    int area;
-    double cost;
-    int maxPeople;
-    int rentTypeId;
-    int facilityTypeId;
-    String standardRoom;
-    String descriptinonOtherConvenience;
-    double poolArea;
-    int numberOfFloors;
-    String facilityFree;
+    private int id;
+    private String name;
+    private int area;
+    private double cost;
+    private int maxPeople;
+    private int rentTypeId;
+    private int facilityTypeId;
+    private String standardRoom;
+    private String descriptinonOtherConvenience;
+    private double poolArea;
+    private int numberOfFloors;
+    private String facilityFree;
 
     public Facility(int id, String name, int area, double cost, int maxPeople, int rentTypeId, int facilityTypeId, String standardRoom, String descriptinonOtherConvenience, double poolArea, int numberOfFloors, String facilityFree) {
         this.id = id;
