@@ -43,7 +43,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void searchCustomer(HttpServletRequest request, HttpServletResponse response) {
         String keySearch = request.getParameter("keySearch");
-        List<Customer> customerList = customerService.search( keySearch);
+        List<Customer> customerList = customerService.search(keySearch);
         request.setAttribute("customerList",customerList);
         try {
             request.getRequestDispatcher("view/customer_view/list.jsp").forward(request,response);

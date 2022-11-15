@@ -23,11 +23,12 @@
 <br>
 <a href="/customer?action=add" class="btn btn-primary">Add New Customer</a>
 <form action="/customer?action=search" method="post" class="float-end">
-    <input type="text" placeholder="Search" name="keySearch">
+    <input type="text" placeholder="Name or address or Id" name="keySearch">
     <button class="btn btn-primary">
         Search
     </button>
 </form>
+
 <div>
 
 <table  class="table table-success table-striped" id="tableCustomer" style="width: 100%">

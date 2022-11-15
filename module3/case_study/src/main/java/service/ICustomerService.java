@@ -10,5 +10,5 @@ public interface ICustomerService {
     boolean update(Customer customer);
     boolean delete(int id);
     Customer findById(int id);
-    List<Customer> search(String name);
+    List<Customer> search(String keySearch);
 }

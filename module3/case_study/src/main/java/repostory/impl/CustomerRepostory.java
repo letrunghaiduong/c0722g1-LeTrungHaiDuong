@@ -18,7 +18,7 @@ public class CustomerRepostory implements ICustomerRepostory {
     private static final String SEARCH_CUSTOMER_SQL = "select c.*, ct.name as type_name from customer c\n" +
             "            join customer_type ct \n" +
             "            on c.customer_type_id = ct.id\n" +
-            "            where c.name like ? or c.id = ?;";
+            "            where c.name like ? or  c.address like ? or c.id =?;";
 
     private static final String JOIN_CUSTOMER = "select c.*, ct.name as type_name from customer c\n" +
             "join customer_type ct\n" +
@@ -140,8 +140,10 @@ public class CustomerRepostory implements ICustomerRepostory {
         Connection connection = BaseRepostory.getConnectDB();
         try {
             PreparedStatement ps = connection.prepareStatement(SEARCH_CUSTOMER_SQL);
-            ps.setString(1,keySearch);
-            ps.setString(2,keySearch);
+            ps.setString(1,"%"+keySearch+"%");
+            ps.setString(2,"%"+keySearch+"%");
+            ps.setString(3,"%"+keySearch+"%");
+//            ps.setInt(3, Integer.parseInt(keySearch));
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
