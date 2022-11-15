@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>Trang thêm mới</h1>
-<a href="/view/employee_view/employee_list.jsp">Quay lại danh sách</a>
+<a href="/view/employee_view/list.jsp">Quay lại danh sách</a>
 <c:if test="${mess!=null}">
     <span style="color: blue">${mess}</span>
 </c:if>

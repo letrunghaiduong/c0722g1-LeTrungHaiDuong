@@ -1,6 +1,6 @@
 package service.impl;
 
-import model.Customer;
+import model.customer.Customer;
 import repostory.ICustomerRepostory;
 import repostory.impl.CustomerRepostory;
 import service.ICustomerService;
@@ -27,5 +27,15 @@ public class CustomerService implements ICustomerService {
     @Override
     public boolean delete(int id) {
         return customerRepostory.delete(id);
+    }
+
+    @Override
+    public Customer findById(int id) {
+        return customerRepostory.findById(id);
+    }
+
+    @Override
+    public List<Customer> search(String name) {
+        return customerRepostory.search(name);
     }
 }

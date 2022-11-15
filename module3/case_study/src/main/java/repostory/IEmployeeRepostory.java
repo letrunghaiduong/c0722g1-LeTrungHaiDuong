@@ -1,6 +1,6 @@
 package repostory;
 
-import model.Employee;
+import model.employee.Employee;
 
 import java.util.List;
 
