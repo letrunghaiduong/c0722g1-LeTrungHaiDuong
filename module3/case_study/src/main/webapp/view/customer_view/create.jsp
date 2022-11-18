@@ -19,21 +19,21 @@
     <span style="color: darkred">${mess}</span>
 </c:if></h2>
 <form class="col-md-2" action="/customer?action=save" method="post">
-    <label class="form-label">Name <input type="text" class="form-control" placeholder="Name Customer" name="name"></label>
-    <label class="form-label">Date of Birth<input type="date" class="form-control" name="dateOfBirth"></label>
+    <label class="form-label">Name <input type="text" class="form-control" placeholder="Name Customer" name="name" required pattern="[A-Za-z]+ "></label>
+    <label class="form-label">Date of Birth<input type="date" class="form-control" name="dateOfBirth" required></label>
     <label class="form-label">Customer Type
-        <select name="customerType" id="" class="form-select">
+        <select name="customerType" id="" class="form-select" required>
             <option>Customer Type</option>
             <c:forEach var="customerType" items="${customerTypeList}">
                 <option value="${customerType.customerTypeId}">${customerType.customerTypeName}</option>
             </c:forEach>
     </select>
     </label>
-    <label class="form-label">ID Card<input type="text" class="form-control" placeholder="ID Card" name="idCard"></label>
-    <label class="form-label">Phone Number<input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber"></label>
-    <label class="form-label">Address<input type="text" class="form-control" placeholder="Address" name="address"></label>
-    <label class="form-label">Email<input type="email" class="form-control" placeholder="Email" name="email"></label>
-    <label class="form-label">Gender
+    <label class="form-label">ID Card<input type="text" class="form-control" placeholder="ID Card" name="idCard" required></label>
+    <label class="form-label">Phone Number<input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber" required></label>
+    <label class="form-label">Address<input type="text" class="form-control" placeholder="Address" name="address" required></label>
+    <label class="form-label">Email<input type="email" class="form-control" placeholder="Email" name="email" required></label>
+    <label class="form-label" required>Gender
         <br>
         <label class="form-check-label"><input type="radio" class="form-check-input" name="gender" value=true>Male</label>
         <label class="form-check-label"><input type="radio" class="form-check-input" name="gender" value=false>Female</label>
